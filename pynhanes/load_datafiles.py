@@ -9,7 +9,7 @@ import os
 from time import sleep
 import numpy as np
 import string
-
+from bs4 import BeautifulSoup
 
 def load_raw_NHANES_data(datafile_path):
     datafiles = glob(str(datafile_path / '*XPT'))
@@ -51,6 +51,7 @@ def get_nhanes_year_code_dict(latest_year=2018):
         year_codes[year_str] = year_letters[index]
     return(year_codes)
 
+
 def download_raw_datafiles(datadir='../data',
                            year='2017-2018', 
                            baseurl='https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018',
@@ -85,20 +86,43 @@ def download_raw_datafiles(datadir='../data',
         
         # grab html documentation for each dataset
         doc_dir = os.path.join(
-            '%s_docs' % dataset_dir,
+            '%s_docs' % datadir,
             year)
         if not os.path.exists(doc_dir):
             os.makedirs(doc_dir)
 
         doc_url = dataset_url.replace('XPT', 'htm')
+        print('downloading', doc_url)
         sleep(np.random.rand())
         r = requests.get(doc_url, allow_redirects=True)
         docfile_name = os.path.join(
             doc_dir,
             os.path.basename(doc_url))
         with open(docfile_name, 'wb') as f:
-            f.write(r.content
+            f.write(r.content)
 
+
+def parse_html_variable_info_section(info):
+    infodict = {
+        i[0].text.strip(': ').replace(' ', ''): i[1].text
+        for i in zip(info.find_all('dt'), info.find_all('dd'))
+    }
+    return(infodict)
+
+def parse_nhanes_html_docs(docfile):
+    variable_df = pd.DataFrame()
+
+    with open(docfile, 'r') as f:
+        soup = BeautifulSoup('\n'.join(f.readlines()), 'html.parser')
+    variable_titles = soup.find_all('h3', {'class':'vartitle'}) 
+    variable_info = soup.find_all('dl')
+    for title, info in zip(variable_titles, variable_info):
+        print(title, info)
+        infodict = parse_html_variable_info_section(info)
+        assert title.get('id') == infodict['VariableName']
+        for key in infodict:
+            if key != 'VariableName':
+                variable_df.loc[title.get('id'), key] = infodict[key]
 
 if __name__ == "__main__":
     datafile_path = Path('../data/2017-2018')
@@ -106,3 +130,39 @@ if __name__ == "__main__":
 
     nhanes_df = join_all_dataframes(alldata)
 
+
+
+soup_table = soup.find("table")
+soup_table_data = soup_table.tbody.find_all("tr")  # contains 2 rows
+
+# Get all the headings of Lists
+headings = []
+for td in soup_table_data[0].find_all("td"):
+    # remove any newlines and extra spaces from left and right
+    headings.append(td.text.replace('\n', ' ').strip())
+
+print(headings)
+
+docdata = {}
+for table, heading in zip(soup.find_all("table"), headings):
+    # Get headers of table i.e., Rank, Country, GDP.
+    t_headers = []
+    for th in table.find_all("th"):
+        # remove any newlines and extra spaces from left and right
+        t_headers.append(th.text.replace('\n', ' ').strip())
+    # Get all the rows of table
+    table_data = []
+    for tr in table.tbody.find_all("tr"): # find all tr's from table's tbody
+        t_row = {}
+        # Each table row is stored in the form of
+        # t_row = {'Rank': '', 'Country/Territory': '', 'GDP(US$million)': ''}
+
+        # find all td's(3) in tr and zip it with t_header
+        for td, th in zip(tr.find_all("td"), t_headers): 
+            t_row[th] = td.text.replace('\n', '').strip()
+        table_data.append(t_row)
+
+    # Put the data for the table with his heading.
+    data[heading] = table_data
+
+print(data)
