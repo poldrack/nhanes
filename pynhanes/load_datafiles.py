@@ -79,25 +79,32 @@ def load_raw_NHANES_data(datafile_path):
             raise Exception('no data files available and unable to download')
 
     alldata = {}
-    metadata = {}
+    metadata = None
 
     for datafile in datafiles:
-        with open(datafile, 'rb') as infile:
-            print('opening', datafile)
-            source_code, metadata_df = get_metadata_from_xpt(datafile)
-            # first need to load using xport to get metadata
-            metadata_df['Source'] = source_code
-            # then load data itself with pandas
-            df = pd.read_sas(datafile)
+        source_code, metadata_df = get_metadata_from_xpt(datafile)
+        metadata_df['Source'] = source_code.split('_')[0]
+        metadata_df = metadata_df.query('Variable != "SEQN"')
+        metadata_df.index = metadata_df['Variable'] + '_' + metadata_df['Source']
+        del metadata_df['Length']
+        del metadata_df['Position']
+        
+        # then load data itself with pandas
+        df = pd.read_sas(datafile)
 
-            alldata[source_code] = df.set_index('SEQN')
-            metadata[source_code] = metadata_df 
+        alldata[source_code] = df.set_index('SEQN')
+        if metadata is None:
+            metadata = metadata_df
+        else:
+            metadata = pd.concat((metadata, metadata_df))
 
     return(alldata, metadata)
 
 
 def get_metadata_from_xpt(datafile):
-    xp = xport.v56.load(infile)
+    # need to load using xport to get metadata
+    with open(datafile, 'rb') as infile:
+        xp = xport.v56.load(infile)
     xp_key = list(xp.keys())[0]
     return(xp_key, xp[xp_key].contents)
 
