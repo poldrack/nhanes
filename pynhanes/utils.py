@@ -13,3 +13,8 @@ def get_nhanes_year_code_dict(latest_year=2018):
 
 def get_source_code_from_filepath(filepath):
     return(os.path.basename(filepath).split('_')[0])
+
+
+class EmptySectionError(Exception):
+    pass
+
