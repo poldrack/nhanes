@@ -20,13 +20,14 @@ import pkg_resources
 
 from nhanes.utils import get_nhanes_year_code_dict, get_source_code_from_filepath
 from nhanes.utils import EmptySectionError, make_long_variable_name
-from nhanes.utils import get_vars_to_keep
+from nhanes.utils import get_vars_to_keep, get_datasets
 
 
-def download_raw_datafiles(basedir='./',
+def download_raw_datafiles(datasets=None,
+                           datasets_file=None,
+                           basedir='./',
                            year='2017-2018',
-                           baseurl='https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018',
-                           datasets=None):
+                           baseurl='https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018'):
 
     year_codes = get_nhanes_year_code_dict()
     assert year in year_codes
@@ -38,12 +39,11 @@ def download_raw_datafiles(basedir='./',
         os.makedirs(dataset_dir)
 
     if datasets is None:
-        datasets = [
-            'HSQ', 'DBQ', 'DLQ', 'HIQ', 'SLQ', 'DPQ', 'SMQRTU',
-            'PFQ', 'BPX', 'BMX', 'HDL', 'TCHOL',
-            'PAQ', 'MCQ', 'DUQ', 'PBCD', 'DEMO',
-            'DXX', 'DR1TOT', 'DR2TOT', 'DIQ', 'GHB',
-            'SMQ', 'WHQ']
+        if datasets_file is None:
+            datasets_file = pkg_resources.resource_filename(
+                'nhanes', 'config/datasets.json')
+        datasets = get_datasets(datasets_file)
+
     for dataset in datasets:
         dataset_url = '/'.join([baseurl, '%s_%s.XPT' % (dataset, year_codes[year])])
         print('downloading', dataset_url)
@@ -77,17 +77,27 @@ def download_raw_datafiles(basedir='./',
 
 def load_raw_NHANES_data(basedir='./',
                          year='2017-2018',
-                         vars_to_keep_file=None):
+                         vars_to_keep_file=None,
+                         datasets_file=None):
     assert year in get_nhanes_year_code_dict()
     if vars_to_keep_file is None:
         vars_to_keep_file = pkg_resources.resource_filename(
             'nhanes', 'config/vars_to_keep.json')
 
+    if datasets_file is None:
+        datasets_file = pkg_resources.resource_filename(
+            'nhanes', 'config/datasets.json')
+    datasets = get_datasets(datasets_file)
+
     datafile_path = Path(basedir) / 'raw_data' / year
     datafiles = glob(str(datafile_path / '*XPT'))
-    if len(datafiles) == 0:
+    # this is a kludge - should really check for each dataset
+    if len(datafiles) != len(datasets):
         print('no data files available - downloading')
-        download_raw_datafiles(basedir, year)
+        download_raw_datafiles(
+            datasets_file=datasets_file,
+            basedir=basedir,
+            year=year)
         datafiles = glob(str(datafile_path / '*XPT'))
     if len(datafiles) == 0:
         raise Exception('no data files available and unable to download')
@@ -317,7 +327,7 @@ def rename_nhanes_vars(nhanes_df, metadata_df):
         rename_dict[i] = metadata_df.loc[i, 'VariableNameLong']
     nhanes_df_renamed = nhanes_df.rename(columns=rename_dict)
     metadata_df = metadata_df.set_index('VariableNameLong')
-    return((nhanes_df, metadata_df))
+    return((nhanes_df_renamed, metadata_df))
 
 
 def save_combined_data(nhanes_df, metadata, variable_code_tables, year,
@@ -341,19 +351,17 @@ if __name__ == "__main__":
                         help='year range of dataset collection')
     parser.add_argument('-v', '--varfile',
                         help='json file to specify variables to keep')
+    parser.add_argument('-d', '--datasetfile',
+                        help='json file to specify datasets to include')
     parser.add_argument('-b', '--basedir',
                         help='base directory for data files')
-   
+
     args = parser.parse_args()
     print(args)
     if args.basedir is None:
         args.basedir = './NHANES'
 
-    #datafile_path = Path('%s/raw_data/%s' % (args.basedir, args.year))
-
-    alldata, metadata = load_raw_NHANES_data(args.basedir, args.year, args.varfile)
-
-    # doc_path = Path('%s/data_docs/%s' % (args.basedir, args.year))
+    alldata, metadata = load_raw_NHANES_data(args.basedir, args.year, args.varfile, args.datasetfile)
 
     variable_df, variable_code_tables = load_nhanes_documentation(args.basedir, args.year)
 
@@ -363,6 +371,6 @@ if __name__ == "__main__":
 
     nhanes_df_recoded, metadata = recode_nhanes_vars(nhanes_df, metadata, variable_code_tables)
 
-    nhanes_df_renamed = rename_nhanes_vars(nhanes_df_recoded, metadata)
+    nhanes_df_renamed, metadata = rename_nhanes_vars(nhanes_df_recoded, metadata)
 
     save_combined_data(nhanes_df_renamed, metadata, variable_code_tables, args.year, args.basedir)
