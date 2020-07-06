@@ -30,17 +30,17 @@ The row indices in the metadata match the column names in the data:
 In [10]: data_df['GeneralHealthCondition']
 Out[10]:
 SEQN
-93703.0            NaN
-93704.0            NaN
-93705.0          Good,
-93706.0     Very good,
-93707.0          Good,
-               ...
-102952.0    Very good,
-102953.0      Fair, or
-102954.0         Good,
-102955.0    Very good,
-102956.0         Good,
+93703.0           NaN
+93704.0           NaN
+93705.0          Good
+93706.0     Very good
+93707.0          Good
+              ...
+102952.0    Very good
+102953.0         Fair
+102954.0         Good
+102955.0    Very good
+102956.0         Good
 Name: GeneralHealthCondition, Length: 8366, dtype: object
 
 In [11]: metadata_df.loc['GeneralHealthCondition']
