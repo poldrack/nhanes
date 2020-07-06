@@ -60,6 +60,7 @@ def get_datasets(infile='datasets.json'):
     with open(infile, 'r') as f: 
         return(json.load(f))
 
+
 def get_nhanes_year_code_dict(latest_year=2018):
     year_codes = {}
     year_letters = string.ascii_uppercase[1:]
