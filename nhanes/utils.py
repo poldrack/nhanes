@@ -2,6 +2,12 @@ import string
 import os
 import json
 
+datasets = [
+    'HSQ', 'DBQ', 'DLQ', 'HIQ', 'SLQ', 'DPQ', 'SMQRTU',
+    'PFQ', 'BPX', 'BMX', 'HDL', 'TCHOL',
+    'PAQ', 'MCQ', 'DUQ', 'PBCD', 'DEMO',
+    'DXX', 'DR1TOT', 'DR2TOT', 'DIQ', 'GHB',
+    'SMQ', 'WHQ']
 
 vars_to_keep = {
     'BMX': ['BMXWT', 'BMXRECUM', 'BMXHT', 'BMXBMI', 'BMXWAIST'],
@@ -49,6 +55,10 @@ def get_vars_to_keep(infile='vars_to_keep.json'):
         vars_to_keep[dataset] = [i.upper() for i in vars_to_keep[dataset]]
     return(vars_to_keep)
 
+
+def get_datasets(infile='datasets.json'):
+    with open(infile, 'r') as f: 
+        return(json.load(f))
 
 def get_nhanes_year_code_dict(latest_year=2018):
     year_codes = {}
