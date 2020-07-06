@@ -57,7 +57,7 @@ def get_vars_to_keep(infile='vars_to_keep.json'):
 
 
 def get_datasets(infile='datasets.json'):
-    with open(infile, 'r') as f: 
+    with open(infile, 'r') as f:
         return(json.load(f))
 
 
