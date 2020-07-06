@@ -64,6 +64,7 @@ Name: GeneralHealthCondition, dtype: object
 
 ```
 
+The NHANES dataset is split across many different individual files, which are denoted by the `Source` variable in the metadata.  Additional information about each data source can be found on the NHANES web site; a helpful function called ```open_dataset_page()``` that will open the relevant page for any particular data source.
 
 ## Building our own data
 
