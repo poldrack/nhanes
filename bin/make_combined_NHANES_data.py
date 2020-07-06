@@ -315,7 +315,7 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
                 table = table.loc[table['Value Description'] != "Don't know"]
 
         for table_index in table.index:
-            recoded_value = table.loc[table_index, 'Value Description']
+            recoded_value = table.loc[table_index, 'Value Description'].split(',')[0]
             value_to_recode = table.loc[table_index, 'Code or Value']
             try:
                 value_to_recode = float(value_to_recode)
