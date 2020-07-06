@@ -24,6 +24,47 @@ data_df = load_NHANES_data(year='2017-2018')
 metadata_df = load_NHANES_metadata(year='2017-2018')
 ```
 
+The row indices in the metadata match the column names in the data:
+
+```
+In [10]: data_df['GeneralHealthCondition']
+Out[10]:
+SEQN
+93703.0            NaN
+93704.0            NaN
+93705.0          Good,
+93706.0     Very good,
+93707.0          Good,
+               ...
+102952.0    Very good,
+102953.0      Fair, or
+102954.0         Good,
+102955.0    Very good,
+102956.0         Good,
+Name: GeneralHealthCondition, Length: 8366, dtype: object
+
+In [11]: metadata_df.loc['GeneralHealthCondition']
+Out[11]:
+Variable                                                                   HSD010
+Type                                                                      Numeric
+Format                                                                        NaN
+Informat                                                                      NaN
+Label                                                    General health condition
+Source                                                                        HSQ
+VariableName                                                               HSD010
+SASLabel                                                 General health condition
+EnglishText                     Next I have some general questions about {your...
+Target                           Both males and females 12 YEARS -\n\n\t\t\t15...
+VariableNameLong_variable_df                               GeneralHealthCondition
+Source_variable_df                                                            HSQ
+EnglishInstructions                                                           NaN
+HardEdits                                                                     NaN
+Recoded                                                                      True
+Name: GeneralHealthCondition, dtype: object
+
+```
+
+
 ## Building our own data
 
 A script called ``make_combined_NHANES_data.py`` is provided so that you can recreate the data for different releases and using different variable sets.
