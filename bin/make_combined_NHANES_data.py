@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 use data from CDC to create combined NHANES data file
 """
@@ -15,20 +16,22 @@ import string
 from bs4 import BeautifulSoup
 import argparse
 import pickle
+import pkg_resources
 
-from utils import get_nhanes_year_code_dict, get_source_code_from_filepath
-from utils import EmptySectionError, make_long_variable_name
-from utils import get_vars_to_keep
+from nhanes.utils import get_nhanes_year_code_dict, get_source_code_from_filepath
+from nhanes.utils import EmptySectionError, make_long_variable_name
+from nhanes.utils import get_vars_to_keep
 
 
-def download_raw_datafiles(datadir='../raw_data',
-                           docdir='../data_docs',
+def download_raw_datafiles(basedir='./',
                            year='2017-2018',
                            baseurl='https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018',
                            datasets=None):
 
     year_codes = get_nhanes_year_code_dict()
     assert year in year_codes
+    datadir = os.path.join(basedir, 'raw_data')
+    docdir = os.path.join(basedir, 'data_docs')
 
     dataset_dir = os.path.join(datadir, year)
     if not os.path.exists(dataset_dir):
@@ -72,15 +75,19 @@ def download_raw_datafiles(datadir='../raw_data',
             f.write(r.content)
 
 
-def load_raw_NHANES_data(datafile_path,
-                         vars_to_keep_file='vars_to_keep.json'):
+def load_raw_NHANES_data(basedir='./',
+                         year='2017-2018',
+                         vars_to_keep_file=None):
+    assert year in get_nhanes_year_code_dict()
+    if vars_to_keep_file is None:
+        vars_to_keep_file = pkg_resources.resource_filename(
+            'nhanes', 'config/vars_to_keep.json')
+
+    datafile_path = Path(basedir) / 'raw_data' / year
     datafiles = glob(str(datafile_path / '*XPT'))
     if len(datafiles) == 0:
         print('no data files available - downloading')
-        # assume year is encoded in datafile_path
-        year = datafile_path.name
-        assert year in get_nhanes_year_code_dict()
-        download_raw_datafiles(year=year)
+        download_raw_datafiles(basedir, year)
         datafiles = glob(str(datafile_path / '*XPT'))
     if len(datafiles) == 0:
         raise Exception('no data files available and unable to download')
@@ -130,7 +137,8 @@ def get_metadata_from_xpt(datafile):
     return(xp_key, xp[xp_key].contents)
 
 
-def load_nhanes_documentation(doc_path):
+def load_nhanes_documentation(basedir='./', year='2017-2018'):
+    doc_path = Path(basedir) / 'data_docs' / year
     docfiles = glob(str(doc_path / '*htm'))
     variable_dfs = {}
     variable_code_tables = {}
@@ -307,40 +315,54 @@ def rename_nhanes_vars(nhanes_df, metadata_df):
     rename_dict = {}
     for i in metadata_df.index:
         rename_dict[i] = metadata_df.loc[i, 'VariableNameLong']
-    return(nhanes_df.rename(columns=rename_dict))
+    nhanes_df_renamed = nhanes_df.rename(columns=rename_dict)
+    metadata_df = metadata_df.set_index('VariableNameLong')
+    return((nhanes_df, metadata_df))
 
 
 def save_combined_data(nhanes_df, metadata, variable_code_tables, year,
-                       output_path='../combined_data'):
+                       basedir):
+    output_path = os.path.join(basedir, 'combined_data')
     combined_data_path = Path(output_path) / year
     if not combined_data_path.exists():
-        combined_data_path.mkdir()
+        combined_data_path.mkdir(parents=True)
 
     nhanes_df.to_csv(combined_data_path / str('NHANES_data_%s.tsv' % year), sep='\t')
     metadata.to_csv(combined_data_path / str('NHANES_metadata_%s.tsv' % year), sep='\t')
     with open(combined_data_path / str('NHANES_variable_coding_%s.pkl' % year), 'wb') as f:
         pickle.dump(variable_code_tables, f)
 
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
-        description='Load and save NHANES data')
+        description='Load and save combined NHANES data')
     parser.add_argument('-y', '--year', default='2017-2018',
                         help='year range of dataset collection')
+    parser.add_argument('-v', '--varfile',
+                        help='json file to specify variables to keep')
+    parser.add_argument('-b', '--basedir',
+                        help='base directory for data files')
+   
     args = parser.parse_args()
-    year = args.year
+    print(args)
+    if args.basedir is None:
+        args.basedir = './NHANES'
 
-    datafile_path = Path('../raw_data/%s' % year)
-    alldata, metadata = load_raw_NHANES_data(datafile_path)
+    #datafile_path = Path('%s/raw_data/%s' % (args.basedir, args.year))
 
-    doc_path = Path('../data_docs/%s' % year)
-    variable_df, variable_code_tables = load_nhanes_documentation(doc_path)
+    alldata, metadata = load_raw_NHANES_data(args.basedir, args.year, args.varfile)
+
+    # doc_path = Path('%s/data_docs/%s' % (args.basedir, args.year))
+
+    variable_df, variable_code_tables = load_nhanes_documentation(args.basedir, args.year)
 
     metadata = metadata.join(variable_df, rsuffix='_variable_df')
+
     nhanes_df = join_all_dataframes(alldata)
 
     nhanes_df_recoded, metadata = recode_nhanes_vars(nhanes_df, metadata, variable_code_tables)
 
     nhanes_df_renamed = rename_nhanes_vars(nhanes_df_recoded, metadata)
 
-    save_combined_data(nhanes_df_renamed, metadata, variable_code_tables, year)
+    save_combined_data(nhanes_df_renamed, metadata, variable_code_tables, args.year, args.basedir)
