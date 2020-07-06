@@ -91,11 +91,17 @@ def load_raw_NHANES_data(basedir='./',
 
     datafile_path = Path(basedir) / 'raw_data' / year
     datafiles = glob(str(datafile_path / '*XPT'))
-    # this is a kludge - should really check for each dataset
-    if len(datafiles) != len(datasets):
-        print('no data files available - downloading')
+    datasets_to_download = []
+
+    for dataset in datasets:
+        matching_dataset = [i for i in datafiles if i.find(dataset) > -1]
+        if not matching_dataset:
+            datasets_to_download.append(dataset)
+
+    if datasets_to_download:
+        print('downloading missing data files')
         download_raw_datafiles(
-            datasets_file=datasets_file,
+            datasets=datasets_to_download,
             basedir=basedir,
             year=year)
         datafiles = glob(str(datafile_path / '*XPT'))
