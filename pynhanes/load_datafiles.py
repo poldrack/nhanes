@@ -10,9 +10,9 @@ from time import sleep
 import numpy as np
 import string
 from bs4 import BeautifulSoup
-from collections import Counter
 
-from utils import get_nhanes_year_code_dict, get_source_code_from_filepath, EmptySectionError
+from utils import get_nhanes_year_code_dict, get_source_code_from_filepath
+from utils import EmptySectionError, make_long_variable_name
 
 
 def download_raw_datafiles(datadir='../raw_data',
@@ -88,7 +88,8 @@ def load_raw_NHANES_data(datafile_path):
         metadata_df.index = metadata_df['Variable'] + '_' + metadata_df['Source']
         del metadata_df['Length']
         del metadata_df['Position']
-        
+        metadata_df = add_long_variable_names_to_metadata(metadata_df)
+        metadata_df = deduplicate_long_variable_names_within_set(metadata_df)        
         # then load data itself with pandas
         df = pd.read_sas(datafile)
 
@@ -98,7 +99,14 @@ def load_raw_NHANES_data(datafile_path):
         else:
             metadata = pd.concat((metadata, metadata_df))
 
+    metadata = deduplicate_long_variable_names_across_sets(metadata)
     return(alldata, metadata)
+
+
+def add_long_variable_names_to_metadata(metadata):
+    for i in metadata.index:
+        metadata.loc[i, 'VariableNameLong'] = make_long_variable_name(metadata.loc[i, 'Label'])
+    return(metadata)
 
 
 def get_metadata_from_xpt(datafile):
@@ -234,13 +242,6 @@ def rename_nhanes_vars(nhanes_df, variable_df):
         rename_dict[i] = variable_df.loc[i, 'VariableNameLong']
     return(nhanes_df.rename(columns=rename_dict))
 
-
-def recode_nhanes_vars(nhanes_df, variable_df, variable_code_tables):
-    for variable in nhanes_df.columns:
-        variable_info = variable_df.loc[variable,]
-        if variable not in variable_code_tables:
-            print('missing', variable)
-    
 
 def save_combined_data(nhanes_df, output_path='../combined_data'):
     combined_data_path = Path(output_path)
