@@ -15,7 +15,7 @@ MAINTAINER_EMAIL = 'poldrack@stanford.edu'
 LICENSE = 'MIT'
 URL = 'https://github.com/poldrack/nhanes'
 DOWNLOAD_URL = 'https://github.com/poldrack/nhanes'
-VERSION = '0.2'
+VERSION = '0.3'
 
 
 def check_dependencies():
