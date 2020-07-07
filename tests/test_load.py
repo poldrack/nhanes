@@ -9,8 +9,8 @@ def test_load_data():
 
 def test_load_metadata():
     df = load_NHANES_metadata(year='2017-2018')
-    assert df.shape[0] == 865
-    assert df.shape[1] == 15
+    assert df.shape[0] == 197
+    assert df.shape[1] == 16
 
 
 def test_match():
@@ -18,3 +18,4 @@ def test_match():
     metadata_df = load_NHANES_metadata(year='2017-2018')
     # make sure column names in data match index in metadata exactly
     assert not set(data_df.columns).difference(metadata_df.index)
+    assert not set(metadata_df.index).difference(data_df.columns)
