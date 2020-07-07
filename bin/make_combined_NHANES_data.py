@@ -315,7 +315,7 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
                 table = table.loc[table['Value Description'] != "Don't know"]
 
         for table_index in table.index:
-            recoded_value = table.loc[table_index, 'Value Description'].split(',')[0]
+            recoded_value = table.loc[table_index, 'Value Description'].replace(',', '')
             value_to_recode = table.loc[table_index, 'Code or Value']
             try:
                 value_to_recode = float(value_to_recode)
@@ -327,6 +327,10 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
     return((nhanes_df_recoded, metadata))
 
 
+def remove_extra_variables_from_metadata(data_df, metadata_df):
+    return(metadata_df.loc[metadata_df.index.isin(data_df.columns)])
+
+
 def rename_nhanes_vars(nhanes_df, metadata_df):
     rename_dict = {}
     for i in metadata_df.index:
@@ -334,6 +338,13 @@ def rename_nhanes_vars(nhanes_df, metadata_df):
     nhanes_df_renamed = nhanes_df.rename(columns=rename_dict)
     metadata_df = metadata_df.set_index('VariableNameLong')
     return((nhanes_df_renamed, metadata_df))
+
+
+def get_variable_nonNA_counts(data_df, metadata_df):
+    for variable in data_df.columns:
+        metadata_df.loc[variable, 'nNonNA'] = data_df[
+            variable].notna().sum()
+    return(metadata_df)
 
 
 def save_combined_data(nhanes_df, metadata, variable_code_tables, year,
@@ -375,8 +386,12 @@ if __name__ == "__main__":
 
     nhanes_df = join_all_dataframes(alldata)
 
+    metadata = remove_extra_variables_from_metadata(nhanes_df, metadata)
+
     nhanes_df_recoded, metadata = recode_nhanes_vars(nhanes_df, metadata, variable_code_tables)
 
     nhanes_df_renamed, metadata = rename_nhanes_vars(nhanes_df_recoded, metadata)
+
+    metadata = get_variable_nonNA_counts(nhanes_df_renamed, metadata)
 
     save_combined_data(nhanes_df_renamed, metadata, variable_code_tables, args.year, args.basedir)
