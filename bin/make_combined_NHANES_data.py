@@ -284,9 +284,11 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
     metadata['Recoded'] = False
     recode_dict = {}
     for variable in nhanes_df.columns:
+        variable_shortname = '%s_%s' % (metadata.loc[
+            variable].Variable, metadata.loc[variable].Source)
         assert variable in metadata.index
-        assert variable in variable_code_tables
-        table = variable_code_tables[variable]
+        assert variable_shortname in variable_code_tables
+        table = variable_code_tables[variable_shortname]
         table = table.loc[~table['Value Description'].str.match('Missing')]
 
         if table.shape[0] == 1 or table['Value Description'].str.match('Range of Values').any():
@@ -298,6 +300,13 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
             continue
 
         recode_dict[variable] = {}
+
+        # some variables include a very small value in place of zero
+        small_values_df = nhanes_df_recoded.query('%s < 1e-6' % variable)
+        if small_values_df.shape[0] > 0:
+            print('recoding zero for', variable)
+            nhanes_df_recoded.loc[small_values_df.index, variable] = 0
+            metadata.loc[variable, 'CustomRecoding'] = 'FloatZero'
 
         if refused_as_na:  # and nhanes_df[variable].dtype != 'float64':
             recode_dict[variable], table = replace_val_in_table(
@@ -317,7 +326,7 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
             recode_dict[variable][value_to_recode] = recoded_value
 
         metadata.loc[variable, 'Recoded'] = True
-        nhanes_df_recoded[variable] = nhanes_df[variable].replace(
+        nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
             to_replace=recode_dict[variable])
 
     nhanes_df_recoded = apply_custom_recoding(nhanes_df_recoded, metadata)
@@ -340,28 +349,40 @@ def apply_custom_recoding(nhanes_df_recoded,
                 to_replace=income_recoder())
             metadata.loc[variable, 'CustomRecoding'] = 'Income'
 
-        # some variables include a very small value in place of zero
-        if nhanes_df_recoded[variable].isin(['5.397605346934028e-79']).sum() > 0:
-            try:
-                nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
-                    to_replace=zero_recoder(use_string=True))
-            except TypeError:
-                nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
-                    to_replace=zero_recoder())
-            metadata.loc[variable, 'CustomRecoding'] = 'FloatZero'
+        # depression questionnaire variables
+        if nhanes_df_recoded[variable].isin(['More than half the days']).sum() > 0:
+            nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
+                to_replace=depression_recoder())
+            metadata.loc[variable, 'CustomRecoding'] = 'Depression'
+
+        # frequency variables
+        if nhanes_df_recoded[variable].isin(['A few times a year']).sum() > 0:
+            nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
+                to_replace=howoften_recoder())
+            metadata.loc[variable, 'CustomRecoding'] = 'HowOften'
 
     return(nhanes_df_recoded)
 
 
-def zero_recoder(use_string=False):
-    if use_string:
-         return({'5.397605346934028e-79': '0'})   
-    else:
-        return({5.397605346934028e-79: 0})
-
-
 def yesno_recoder():
     return({'Yes': 1, 'No': 0})
+
+
+def howoften_recoder():
+    return({
+        'Never': 0,
+        'A few times a year': 1,
+        'Monthly': 2,
+        'Weekly': 3,
+        'Daily': 4})
+
+
+def depression_recoder():
+    return({
+        'Not at all': 0,
+        'Several days': 1,
+        'More than half the days': 2,
+        'Nearly every day': 3})
 
 
 def income_recoder():
@@ -453,10 +474,10 @@ if __name__ == "__main__":
 
     metadata = remove_extra_variables_from_metadata(nhanes_df, metadata)
 
-    nhanes_df_recoded, metadata = recode_nhanes_vars(nhanes_df, metadata, variable_code_tables)
+    nhanes_df_renamed, metadata = rename_nhanes_vars(nhanes_df, metadata)
 
-    nhanes_df_renamed, metadata = rename_nhanes_vars(nhanes_df_recoded, metadata)
+    nhanes_df_recoded, metadata = recode_nhanes_vars(nhanes_df_renamed, metadata, variable_code_tables)
 
-    metadata = get_variable_nonNA_counts(nhanes_df_renamed, metadata)
+    metadata = get_variable_nonNA_counts(nhanes_df_recoded, metadata)
 
-    save_combined_data(nhanes_df_renamed, metadata, variable_code_tables, args.year, args.basedir)
+    save_combined_data(nhanes_df_recoded, metadata, variable_code_tables, args.year, args.basedir)
