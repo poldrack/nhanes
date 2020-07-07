@@ -282,6 +282,7 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
                        table_length_thresh=20):
     nhanes_df_recoded = nhanes_df.copy()
     metadata['Recoded'] = False
+    recode_dict = {}
     for variable in nhanes_df.columns:
         assert variable in metadata.index
         assert variable in variable_code_tables
@@ -296,23 +297,15 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
         if table.shape[0] > table_length_thresh:
             continue
 
-        recode_dict = {}
+        recode_dict[variable] = {}
 
         if refused_as_na:  # and nhanes_df[variable].dtype != 'float64':
-            refused_idx = table['Value Description'] == 'Refused'
-            if refused_idx.sum() > 0:
-                refused_val = table.loc[refused_idx, 'Code or Value'].iloc[0]
-                refused_val = recode_to_float_if_possible(refused_val)
-                recode_dict[refused_val] = np.nan
-                table = table.loc[table['Value Description'] != 'Refused']
+            recode_dict[variable], table = replace_val_in_table(
+                'Refused', recode_dict[variable], table)
 
         if dontknow_as_na:  # and nhanes_df[variable].dtype != 'float64':
-            dontknow_idx = table['Value Description'] == "Don't know"
-            if dontknow_idx.sum() > 0:
-                dontknow_val = table.loc[dontknow_idx, 'Code or Value'].iloc[0]
-                dontknow_val = recode_to_float_if_possible(dontknow_val)
-                recode_dict[dontknow_val] = np.nan
-                table = table.loc[table['Value Description'] != "Don't know"]
+            recode_dict[variable], table = replace_val_in_table(
+                "Don't know", recode_dict[variable], table)
 
         for table_index in table.index:
             recoded_value = table.loc[table_index, 'Value Description'].replace(',', '')
@@ -321,10 +314,62 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
                 value_to_recode = float(value_to_recode)
             except ValueError:
                 pass
-            recode_dict[value_to_recode] = recoded_value
+            recode_dict[variable][value_to_recode] = recoded_value
+
         metadata.loc[variable, 'Recoded'] = True
-        nhanes_df_recoded[variable] = nhanes_df[variable].replace(to_replace=recode_dict)
+        nhanes_df_recoded[variable] = nhanes_df[variable].replace(
+            to_replace=recode_dict[variable])
+
+    nhanes_df_recoded = apply_custom_recoding(nhanes_df_recoded, metadata)
     return((nhanes_df_recoded, metadata))
+
+def apply_custom_recoding(nhanes_df_recoded,
+                          metadata,
+                          recode_yesno=True):
+
+    for variable in nhanes_df_recoded.columns:
+        if recode_yesno and nhanes_df_recoded[variable].isin(['Yes', 'No']).sum() > 0:
+            nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
+                to_replace=yesno_recoder())
+            metadata.loc[variable, 'CustomRecoding'] = 'YesNo'
+        
+        # heuristic to find income variables
+        if nhanes_df_recoded[variable].isin(list(income_recoder().keys())).sum() > 0:
+            nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
+                to_replace=income_recoder())
+            metadata.loc[variable, 'CustomRecoding'] = 'Income'
+
+
+    return(nhanes_df_recoded)
+
+def yesno_recoder():
+    return({'Yes': 1, 'No': 0})
+
+def income_recoder():
+    return({'$ 0 to $ 4999': 2000, 
+                 '$ 5000 to $ 9999': 7500,
+                 '$10000 to $14999': 12500,
+                 '$15000 to $19999': 17500,
+                 '$20000 to $24999': 22500,
+                 '$25000 to $34999': 30000,
+                 '$35000 to $44999': 40000,
+                 '$45000 to $54999': 50000,
+                 '$55000 to $64999': 60000,
+                 '$65000 to $74999': 70000,
+                 '$75000 to $99999': 87500,
+                 '$100000 and Over': 100000,
+                 'Under $20000': np.nan,
+                 '$20000 and Over': np.nan})
+
+
+def replace_val_in_table(value, recode_dict, table, replacement=np.nan):
+    replacement_idx = table['Value Description'] == value
+    if replacement_idx.sum() > 0:
+        replacement_val = table.loc[replacement_idx, 'Code or Value'].iloc[0]
+        replacement_val = recode_to_float_if_possible(replacement_val)
+        recode_dict[replacement_val] = replacement
+        table = table.loc[table['Value Description'] != value]
+    return((recode_dict, table))
 
 
 def remove_extra_variables_from_metadata(data_df, metadata_df):
