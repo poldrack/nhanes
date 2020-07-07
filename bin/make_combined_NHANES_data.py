@@ -323,6 +323,7 @@ def recode_nhanes_vars(nhanes_df, metadata, variable_code_tables,
     nhanes_df_recoded = apply_custom_recoding(nhanes_df_recoded, metadata)
     return((nhanes_df_recoded, metadata))
 
+
 def apply_custom_recoding(nhanes_df_recoded,
                           metadata,
                           recode_yesno=True):
@@ -332,34 +333,53 @@ def apply_custom_recoding(nhanes_df_recoded,
             nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
                 to_replace=yesno_recoder())
             metadata.loc[variable, 'CustomRecoding'] = 'YesNo'
-        
+
         # heuristic to find income variables
         if nhanes_df_recoded[variable].isin(list(income_recoder().keys())).sum() > 0:
             nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
                 to_replace=income_recoder())
             metadata.loc[variable, 'CustomRecoding'] = 'Income'
 
+        # some variables include a very small value in place of zero
+        if nhanes_df_recoded[variable].isin(['5.397605346934028e-79']).sum() > 0:
+            try:
+                nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
+                    to_replace=zero_recoder(use_string=True))
+            except TypeError:
+                nhanes_df_recoded[variable] = nhanes_df_recoded[variable].replace(
+                    to_replace=zero_recoder())
+            metadata.loc[variable, 'CustomRecoding'] = 'FloatZero'
 
     return(nhanes_df_recoded)
+
+
+def zero_recoder(use_string=False):
+    if use_string:
+         return({'5.397605346934028e-79': '0'})   
+    else:
+        return({5.397605346934028e-79: 0})
+
 
 def yesno_recoder():
     return({'Yes': 1, 'No': 0})
 
+
 def income_recoder():
-    return({'$ 0 to $ 4999': 2000, 
-                 '$ 5000 to $ 9999': 7500,
-                 '$10000 to $14999': 12500,
-                 '$15000 to $19999': 17500,
-                 '$20000 to $24999': 22500,
-                 '$25000 to $34999': 30000,
-                 '$35000 to $44999': 40000,
-                 '$45000 to $54999': 50000,
-                 '$55000 to $64999': 60000,
-                 '$65000 to $74999': 70000,
-                 '$75000 to $99999': 87500,
-                 '$100000 and Over': 100000,
-                 'Under $20000': np.nan,
-                 '$20000 and Over': np.nan})
+    return({
+        '$ 0 to $ 4999': 2000,
+        '$ 5000 to $ 9999': 7500,
+        '$10000 to $14999': 12500,
+        '$15000 to $19999': 17500,
+        '$20000 to $24999': 22500,
+        '$25000 to $34999': 30000,
+        '$35000 to $44999': 40000,
+        '$45000 to $54999': 50000,
+        '$55000 to $64999': 60000,
+        '$65000 to $74999': 70000,
+        '$75000 to $99999': 87500,
+        '$100000 and Over': 100000,
+        'Under $20000': np.nan,
+        '$20000 and Over': np.nan})
 
 
 def replace_val_in_table(value, recode_dict, table, replacement=np.nan):
