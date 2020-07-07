@@ -5,6 +5,8 @@ Python interface to NHANES dataset
 
 NHANES is the [National Health and Nutrition Examination Survey](https://www.cdc.gov/nchs/nhanes/index.htm), which is run by the US Centers for Disease Control. Every year, the study examines a representative sample of about 5000 individuals from across the United States, using a broad range of surveys, physiological measurements, and laboratory tests.  These data are useful for many purposes --- the main interest of the developer is to use them in teaching introductory statistics.  There is a R package that provides access to the NHANES dataset, and the present package is meant to provide similar access to python users.
 
+*NOTE*: A number of the variables have been recoded in order to make the data more usable. Before using these data for any serious analysis project, please examine the code and make sure that you understand the potential impact of this recoding on your analyses.
+
 ## Installing the package
 
 You can install the package using the following command:
@@ -64,7 +66,7 @@ Name: GeneralHealthCondition, dtype: object
 
 ```
 
-The NHANES dataset is split across many different individual files, which are denoted by the `Source` variable in the metadata.  Additional information about each data source can be found on the NHANES web site; a helpful function called ```open_dataset_page()``` that will open the relevant page for any particular data source.
+Additional information about each variable can be found on the NHANES web site; a helpful function called ```open_variable_page()``` is included that will open the relevant page for any particular data source.
 
 ## Building our own data
 
