@@ -1,608 +1,608 @@
-VariableNameLong	Variable	Type	Format	Informat	Label	Source	VariableName	SASLabel	EnglishText	Target	VariableNameLong_variable_df	Source_variable_df	EnglishInstructions	HardEdits	Recoded	nNonNA
+VariableNameLong	Variable	Type	Format	Informat	Label	Source	VariableName	SASLabel	EnglishText	Target	VariableNameLong_variable_df	Source_variable_df	EnglishInstructions	HardEdits	Recoded	CustomRecoding	nNonNA
 GeneralHealthCondition	HSD010	Numeric			General health condition	HSQ	HSD010	General health condition	Next I have some general questions about {your/SP's} health. Would you say {your/SP's} health in general is . . .	" Both males and females 12 YEARS -
 
-			150 YEARS"	GeneralHealthCondition	HSQ			True	5964.0
+			150 YEARS"	GeneralHealthCondition	HSQ			True		5964.0
 EverBreastfedOrFedBreastmilk	DBQ010	Numeric			Ever breastfed or fed breastmilk	DBQ	DBQ010	Ever breastfed or fed breastmilk	Now I'm going to ask you some general questions about {SP's} eating habits.  Was {SP} ever breastfed or fed breastmilk?	" Both males and females 0 YEARS -
 
-			6 YEARS"	EverBreastfedOrFedBreastmilk	DBQ			True	1069.0
+			6 YEARS"	EverBreastfedOrFedBreastmilk	DBQ			True	YesNo	1069.0
 AgeStoppedBreastfeedingdays	DBD030	Numeric			Age stopped breastfeeding(days)	DBQ	DBD030	Age stopped breastfeeding(days)	How old was {SP} when {he/she} completely stopped breastfeeding or being fed breastmilk?	" Both males and females 0 YEARS -
 
-			6 YEARS"	AgeStoppedBreastfeedingdays	DBQ			False	862.0
+			6 YEARS"	AgeStoppedBreastfeedingdays	DBQ			False		862.0
 AgeFirstFedFormuladays	DBD041	Numeric			Age first fed formula(days)	DBQ	DBD041	Age first fed formula(days)	How old was {SP} when {he/she} was first fed formula?	" Both males and females 0 YEARS -
 
-			6 YEARS"	AgeFirstFedFormuladays	DBQ			False	1077.0
+			6 YEARS"	AgeFirstFedFormuladays	DBQ			False		1077.0
 AgeStoppedReceivingFormuladays	DBD050	Numeric			Age stopped receiving formula(days)	DBQ	DBD050	Age stopped receiving formula(days)	How old was {SP} when {he/she} completely stopped drinking formula?	" Both males and females 0 YEARS -
 
-			6 YEARS"	AgeStoppedReceivingFormuladays	DBQ			False	891.0
+			6 YEARS"	AgeStoppedReceivingFormuladays	DBQ			False		891.0
 AgeStartedOtherFoodbeverage	DBD055	Numeric			Age started other food/beverage	DBQ	DBD055	Age started other food/beverage	This next question is about the first thing that {SP} was given other than breast milk or formula.  Please include juice, cow's milk, sugar water, baby food, or anything else that {SP} might have been given, even water.  How old was {SP} when {he/she} was first fed anything other than breast milk or formula? (Days)	" Both males and females 0 YEARS -
 
-			6 YEARS"	AgeStartedOtherFoodbeverage	DBQ			False	1077.0
+			6 YEARS"	AgeStartedOtherFoodbeverage	DBQ			False		1077.0
 AgeFirstFedMilkdays	DBD061	Numeric			Age first fed milk(days)	DBQ	DBD061	Age first fed milk(days)	How old was {SP} when {he/she} was first fed milk?	" Both males and females 0 YEARS -
 
-			6 YEARS"	AgeFirstFedMilkdays	DBQ			False	1066.0
+			6 YEARS"	AgeFirstFedMilkdays	DBQ			False		1066.0
 TypeOfMilkFirstFedWholeMilk	DBQ073A	Numeric			Type of milk first fed - whole milk	DBQ	DBQ073A	Type of milk first fed - whole milk	What type of milk was {SP} first fed?  Was it . . .	" Both males and females 0 YEARS -
 
-			6 YEARS"	TypeOfMilkFirstFedWholeMilk	DBQ	CODE ALL THAT APPLY		True	738.0
+			6 YEARS"	TypeOfMilkFirstFedWholeMilk	DBQ	CODE ALL THAT APPLY		True		738.0
 TypeOfMilkFirstFed2Milk	DBQ073B	Numeric			Type of milk first fed - 2% milk	DBQ	DBQ073B	Type of milk first fed - 2% milk	What type of milk was {SP} first fed?  Was it . . .	" Both males and females 0 YEARS -
 
-			6 YEARS"	TypeOfMilkFirstFed2Milk	DBQ	CODE ALL THAT APPLY		False	186.0
+			6 YEARS"	TypeOfMilkFirstFed2Milk	DBQ	CODE ALL THAT APPLY		False		186.0
 TypeOfMilkFirstFed1Milk	DBQ073C	Numeric			Type of milk first fed - 1% milk	DBQ	DBQ073C	Type of milk first fed - 1% milk	What type of milk was {SP} first fed?  Was it . . .	" Both males and females 0 YEARS -
 
-			6 YEARS"	TypeOfMilkFirstFed1Milk	DBQ	CODE ALL THAT APPLY		False	36.0
+			6 YEARS"	TypeOfMilkFirstFed1Milk	DBQ	CODE ALL THAT APPLY		False		36.0
 TypeOfMilkFirstFedFatFreeMilk	DBQ073D	Numeric			Type of milk first fed - fat free milk	DBQ	DBQ073D	Type of milk first fed - fat free milk	What type of milk was {SP} first fed?  Was it . . .	" Both males and females 0 YEARS -
 
-			6 YEARS"	TypeOfMilkFirstFedFatFreeMilk	DBQ	CODE ALL THAT APPLY		False	2.0
+			6 YEARS"	TypeOfMilkFirstFedFatFreeMilk	DBQ	CODE ALL THAT APPLY		False		2.0
 TypeOfMilkFirstFedSoyMilk	DBQ073E	Numeric			Type of milk first fed - soy milk	DBQ	DBQ073E	Type of milk first fed - soy milk	What type of milk was {SP} first fed? Was it . . .	" Both males and females 0 YEARS -
 
-			6 YEARS"	TypeOfMilkFirstFedSoyMilk	DBQ	CODE ALL THAT APPLY		False	25.0
+			6 YEARS"	TypeOfMilkFirstFedSoyMilk	DBQ	CODE ALL THAT APPLY		False		25.0
 TypeOfMilkFirstFedOther	DBQ073U	Numeric			Type of milk first fed - other	DBQ	DBQ073U	Type of milk first fed - other	What type of milk was {SP} first fed?  Was it . . .	" Both males and females 0 YEARS -
 
-			6 YEARS"	TypeOfMilkFirstFedOther	DBQ	CODE ALL THAT APPLY		False	67.0
+			6 YEARS"	TypeOfMilkFirstFedOther	DBQ	CODE ALL THAT APPLY		False		67.0
 HowHealthyIsTheDiet	DBQ700	Numeric			How healthy is the diet	DBQ	DBQ700	How healthy is the diet	Next I have some questions about {your/SP?s} eating habits.  In general, how healthy is {your/his/her} overall diet?  Would you say . . .	" Both males and females 16 YEARS -
 
-			150 YEARS"	HowHealthyIsTheDiet	DBQ			True	5826.0
+			150 YEARS"	HowHealthyIsTheDiet	DBQ			True		5826.0
 Past30DayMilkProductConsumption	DBQ197	Numeric			Past 30 day milk product consumption	DBQ	DBQ197	Past 30 day milk product consumption	Now I'm going to ask a few questions about milk products.  Do not include their use in cooking.  In the past 30 days, how often did {you/SP} have milk to drink or on {your/his/her} cereal?  Please include chocolate and other flavored milks as well as hot cocoa made with milk.  Do not count small amounts of milk added to coffee or tea.  Would you say...	" Both males and females 1 YEARS -
 
-			150 YEARS"	Past30DayMilkProductConsumption	DBQ	HAND CARD DBQ3		True	8365.0
+			150 YEARS"	Past30DayMilkProductConsumption	DBQ	HAND CARD DBQ3		True	FloatZero	8365.0
 YouDrinkWholeOrRegularMilk	DBQ223A	Numeric			You drink whole or regular milk	DBQ	DBQ223A	You drink whole or regular milk	What type of milk was it?  Was it usually . . .	" Both males and females 1 YEARS -
 
-			150 YEARS"	YouDrinkWholeOrRegularMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		True	2730.0
+			150 YEARS"	YouDrinkWholeOrRegularMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		True		2730.0
 YouDrink2FatMilk	DBQ223B	Numeric			You drink 2% fat milk	DBQ	DBQ223B	You drink 2% fat milk	What type of milk was it?  Was it usually . . .	" Both males and females 1 YEARS -
 
-			150 YEARS"	YouDrink2FatMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False	2741.0
+			150 YEARS"	YouDrink2FatMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False		2741.0
 YouDrink1FatMilk	DBQ223C	Numeric			You drink 1% fat milk	DBQ	DBQ223C	You drink 1% fat milk	What type of milk was it?  Was it usually . . .	" Both males and females 1 YEARS -
 
-			150 YEARS"	YouDrink1FatMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False	819.0
+			150 YEARS"	YouDrink1FatMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False		819.0
 YouDrinkFatFreeskimMilk	DBQ223D	Numeric			You drink fat free/skim milk	DBQ	DBQ223D	You drink fat free/skim milk	What type of milk was it?  Was it usually . . .	" Both males and females 1 YEARS -
 
-			150 YEARS"	YouDrinkFatFreeskimMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False	319.0
+			150 YEARS"	YouDrinkFatFreeskimMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False		319.0
 YouDrinkSoyMilk	DBQ223E	Numeric			You drink soy milk	DBQ	DBQ223E	You drink soy milk	What type of milk was it? Was it usually . . .	" Both males and females 1 YEARS -
 
-			150 YEARS"	YouDrinkSoyMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT		False	178.0
+			150 YEARS"	YouDrinkSoyMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT		False		178.0
 YouDrinkAnotherTypeOfMilk	DBQ223U	Numeric			You drink another type of milk	DBQ	DBQ223U	You drink another type of milk	What type of milk was it?  Was it usually . . .	" Both males and females 1 YEARS -
 
-			150 YEARS"	YouDrinkAnotherTypeOfMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False	629.0
+			150 YEARS"	YouDrinkAnotherTypeOfMilk	DBQ	IF RESPONDENT CANNOT PROVIDE USUAL TYPE, CODE ALL THAT APPLY.		False		629.0
 RegularMilkUse5TimesPerWeek	DBQ229	Numeric			Regular milk use 5 times per week	DBQ	DBQ229	Regular milk use 5 times per week	The next question is about regular milk use.  A regular milk drinker is someone who uses any type of milk at least 5 times a week.  Using this definition, which statement best describes {you/SP}?...	" Both males and females 20 YEARS -
 
-			150 YEARS"	RegularMilkUse5TimesPerWeek	DBQ	HAND CARD DBQ4		True	5262.0
+			150 YEARS"	RegularMilkUse5TimesPerWeek	DBQ	HAND CARD DBQ4		True		5262.0
 HowOftenDrankMilkAge512	DBQ235A	Numeric			How often drank milk age 5-12	DBQ	DBQ235A	How often drank milk age 5-12	Now, I'm going to ask you how often {you/SP} drank milk at different times in {your/his/her} life.  How often did {you/SP} drink any type of milk, including milk added to cereal when {you were/s/he was} a child between the ages of 5 and 12 years old?  Would you say...	" Both males and females 20 YEARS -
 
-			150 YEARS"	HowOftenDrankMilkAge512	DBQ	HAND CARD DBQ5  IF NECESSARY, PROBE FOR USUAL OR MOST COMMON AMOUNT FOR THIS TIME PERIOD		True	3809.0
+			150 YEARS"	HowOftenDrankMilkAge512	DBQ	HAND CARD DBQ5  IF NECESSARY, PROBE FOR USUAL OR MOST COMMON AMOUNT FOR THIS TIME PERIOD		True	FloatZero	3809.0
 HowOftenDrankMilkAge1317	DBQ235B	Numeric			How often drank milk age 13-17	DBQ	DBQ235B	How often drank milk age 13-17	Now, I'm going to ask you how often {you/SP} drank milk at different times in {your/his/her} life.  How often did {you/SP} drink any type of milk, including milk added to cereal when {you were/s/he was} a teenager between the ages of 13 and 17 years old?  Would you say...	" Both males and females 20 YEARS -
 
-			150 YEARS"	HowOftenDrankMilkAge1317	DBQ	HAND CARD DBQ5  IF NECESSARY, PROBE FOR USUAL OR MOST COMMON AMOUNT FOR THIS TIME PERIOD		True	3826.0
+			150 YEARS"	HowOftenDrankMilkAge1317	DBQ	HAND CARD DBQ5  IF NECESSARY, PROBE FOR USUAL OR MOST COMMON AMOUNT FOR THIS TIME PERIOD		True	FloatZero	3826.0
 HowOftenDrankMilkAge1835	DBQ235C	Numeric			How often drank milk age 18-35	DBQ	DBQ235C	How often drank milk age 18-35	Now, I'm going to ask you how often {you/SP} drank milk at different times in {your/his/her} life.  How often did {you/SP} drink any type of milk, including milk added to cereal when {you were/s/he was} a young adult between the ages of 18 and 35 years old?  Would you say...	" Both males and females 20 YEARS -
 
-			150 YEARS"	HowOftenDrankMilkAge1835	DBQ	HAND CARD DBQ5  IF NECESSARY, PROBE FOR USUAL OR MOST COMMON AMOUNT FOR THIS TIME PERIOD		True	3834.0
+			150 YEARS"	HowOftenDrankMilkAge1835	DBQ	HAND CARD DBQ5  IF NECESSARY, PROBE FOR USUAL OR MOST COMMON AMOUNT FOR THIS TIME PERIOD		True	FloatZero	3834.0
 CommunitygovernmentMealsDelivered	DBQ301	Numeric			Community/Government meals delivered	DBQ	DBQ301	Community/Government meals delivered	"The next questions are about meals provided by community or government programs.  In the past 12 months, did {you/SP} receive any meals delivered to {your/his/her} home from community programs, ""Meals on Wheels"", or any other programs?"	" Both males and females 60 YEARS -
 
-			150 YEARS"	CommunitygovernmentMealsDelivered	DBQ			True	2018.0
+			150 YEARS"	CommunitygovernmentMealsDelivered	DBQ			True	YesNo	2018.0
 EatMealsAtCommunityseniorCenter	DBQ330	Numeric			Eat meals at Community/Senior center	DBQ	DBQ330	Eat meals at Community/Senior center	In the past 12 months, did {you/SP} go to a community program or senior center to eat prepared meals?	" Both males and females 60 YEARS -
 
-			150 YEARS"	EatMealsAtCommunityseniorCenter	DBQ	INCLUDE ADULT DAY CARE		True	2017.0
+			150 YEARS"	EatMealsAtCommunityseniorCenter	DBQ	INCLUDE ADULT DAY CARE		True	YesNo	2017.0
 AttendKindergartenThruHighSchool	DBQ360	Numeric			Attend kindergarten thru high school	DBQ	DBQ360	Attend kindergarten thru high school	During the school year, {do you/does SP} attend a kindergarten, grade school, junior or high school?	" Both males and females 4 YEARS -
 
-			19 YEARS"	AttendKindergartenThruHighSchool	DBQ			True	2502.0
+			19 YEARS"	AttendKindergartenThruHighSchool	DBQ			True	YesNo	2502.0
 SchoolServesSchoolLunches	DBQ370	Numeric			School serves school lunches	DBQ	DBQ370	School serves school lunches	Does {your/SP's} school serve school lunches?  These are complete lunches that cost the same every day.	" Both males and females 4 YEARS -
 
-			19 YEARS"	SchoolServesSchoolLunches	DBQ			True	2070.0
+			19 YEARS"	SchoolServesSchoolLunches	DBQ			True	YesNo	2070.0
 OfTimesweekGetSchoolLunch	DBD381	Numeric			# of times/week get school lunch	DBQ	DBD381	# of times/week get school lunch	During the school year, about how many times a week {do you/does SP} usually get a complete school lunch?	" Both males and females 4 YEARS -
 
-			19 YEARS"	OfTimesweekGetSchoolLunch	DBQ			False	2000.0
+			19 YEARS"	OfTimesweekGetSchoolLunch	DBQ			False		2000.0
 SchoolLunchFreeReducedOrFullPrice	DBQ390	Numeric			School lunch free, reduced or full price	DBQ	DBQ390	School lunch free, reduced or full price	{Do you/Does SP} get these lunches free, at a reduced price, or {do you/does he/she} pay full price?	" Both males and females 4 YEARS -
 
-			19 YEARS"	SchoolLunchFreeReducedOrFullPrice	DBQ			True	1635.0
+			19 YEARS"	SchoolLunchFreeReducedOrFullPrice	DBQ			True		1635.0
 SchoolServeCompleteBreakfastEachDay	DBQ400	Numeric			School serve complete breakfast each day	DBQ	DBQ400	School serve complete breakfast each day	Does {your/SP's} school serve a complete breakfast that costs the same every day?	" Both males and females 4 YEARS -
 
-			19 YEARS"	SchoolServeCompleteBreakfastEachDay	DBQ			True	2049.0
+			19 YEARS"	SchoolServeCompleteBreakfastEachDay	DBQ			True	YesNo	2049.0
 OfTimesweekGetSchoolBreakfast	DBD411	Numeric			# of times/week get school breakfast	DBQ	DBD411	# of times/week get school breakfast	During the school year, about how many times a week {do you/does SP} usually get a complete breakfast at school?	" Both males and females 4 YEARS -
 
-			19 YEARS"	OfTimesweekGetSchoolBreakfast	DBQ			False	1841.0
+			19 YEARS"	OfTimesweekGetSchoolBreakfast	DBQ			False		1841.0
 SchoolBreakfastFreereducedfullPrice	DBQ421	Numeric			School breakfast free/reduced/full price	DBQ	DBQ421	School breakfast free/reduced/full price	{Do you/Does SP} get these breakfasts free, at a reduced price, or {do you/does he/she} pay full price?	" Both males and females 4 YEARS -
 
-			19 YEARS"	SchoolBreakfastFreereducedfullPrice	DBQ			True	1082.0
+			19 YEARS"	SchoolBreakfastFreereducedfullPrice	DBQ			True		1082.0
 SummerProgramMealFreereducedPrice	DBQ424	Numeric			Summer program meal free/reduced price	DBQ	DBQ424	Summer program meal free/reduced price	(Do you/Does SP) get a free or reduced price meal at any summer program (he/she) attends?	" Both males and females 4 YEARS -
 
-			19 YEARS"	SummerProgramMealFreereducedPrice	DBQ			True	1345.0
+			19 YEARS"	SummerProgramMealFreereducedPrice	DBQ			True	YesNo	1345.0
 OfMealsNotHomePrepared	DBD895	Numeric			# of meals not home prepared	DBQ	DBD895	# of meals not home prepared	Next I'm going to ask you about meals.  By meal, I mean breakfast, lunch and dinner.  During the past 7 days, how many meals {did you/did SP} get that were prepared away from home in places such as restaurants, fast food places, food stands, grocery stores, or from vending machines?  {Please do not include meals provided as part of the school lunch or school breakfast./Please do not include meals provided as part of the community programs you reported earlier.}	" Both males and females 1 YEARS -
 
-			150 YEARS"	OfMealsNotHomePrepared	DBQ	"CAPI INSTRUCTION: IF DBQ381G = 1 OR DBQ.411G = 1, DISPLAY {Please do not include meals provided as part of the school lunch or school breakfast.} IF DBQ.301 = 1 OR DBQ.330 = 1, DISPLAY {Please do not include meals provided as part of the community programs you reported earlier.}  SOFT EDIT:  DISPLAY A MESSAGE FOR ENTRY LARGER THAN ""21."" - ""Unusually large number entered - Please verify - this is more than 3 meals per day, each day during the past 7 days."""		False	8336.0
+			150 YEARS"	OfMealsNotHomePrepared	DBQ	"CAPI INSTRUCTION: IF DBQ381G = 1 OR DBQ.411G = 1, DISPLAY {Please do not include meals provided as part of the school lunch or school breakfast.} IF DBQ.301 = 1 OR DBQ.330 = 1, DISPLAY {Please do not include meals provided as part of the community programs you reported earlier.}  SOFT EDIT:  DISPLAY A MESSAGE FOR ENTRY LARGER THAN ""21."" - ""Unusually large number entered - Please verify - this is more than 3 meals per day, each day during the past 7 days."""		False		8336.0
 OfMealsFromFastFoodOrPizzaPlace	DBD900	Numeric			# of meals from fast food or pizza place	DBQ	DBD900	# of meals from fast food or pizza place	How many of those meals {did you/did SP} get from a fast-food or pizza place?	" Both males and females 1 YEARS -
 
-			150 YEARS"	OfMealsFromFastFoodOrPizzaPlace	DBQ	"CAPI INSTRUCTION:  HARD EDIT NUMBER OF MEALS ENTERED IN DBQ.900 MUST BE EQUAL TO OR LESS THAN NUMBER ENTERED IN DBQ.895.  IF NOT, DISPLAY THE FOLLOWING: ""THE NUMBER OF MEALS FROM A FAST FOOD OR PIZZA PLACE CANNOT BE GREATER THAN NUMBER OF MEALS PREPARED AWAY FROM HOME."""		False	6444.0
+			150 YEARS"	OfMealsFromFastFoodOrPizzaPlace	DBQ	"CAPI INSTRUCTION:  HARD EDIT NUMBER OF MEALS ENTERED IN DBQ.900 MUST BE EQUAL TO OR LESS THAN NUMBER ENTERED IN DBQ.895.  IF NOT, DISPLAY THE FOLLOWING: ""THE NUMBER OF MEALS FROM A FAST FOOD OR PIZZA PLACE CANNOT BE GREATER THAN NUMBER OF MEALS PREPARED AWAY FROM HOME."""		False		6444.0
 OfReadytoeatFoodsInPast30Days	DBD905	Numeric			# of ready-to-eat foods in past 30 days	DBQ	DBD905	# of ready-to-eat foods in past 30 days	"Some grocery stores sell ""ready to eat"" foods such as salads, soups, chicken, sandwiches and cooked vegetables in their salad bars and deli counters.  During the past 30 days, how often did {you/SP} eat ""ready to eat"" foods from the grocery store?  Please do not include sliced meat or cheese you buy for sandwiches and frozen or canned foods."	" Both males and females 1 YEARS -
 
-			150 YEARS"	OfReadytoeatFoodsInPast30Days	DBQ			False	8334.0
+			150 YEARS"	OfReadytoeatFoodsInPast30Days	DBQ			False		8334.0
 OfFrozenMealspizzaInPast30Days	DBD910	Numeric			# of frozen meals/pizza in past 30 days	DBQ	DBD910	# of frozen meals/pizza in past 30 days	During the past 30 days, how often did you {SP} eat frozen meals or frozen pizzas?  Here are some examples of frozen meals and frozen pizzas.	" Both males and females 1 YEARS -
 
-			150 YEARS"	OfFrozenMealspizzaInPast30Days	DBQ			False	8332.0
+			150 YEARS"	OfFrozenMealspizzaInPast30Days	DBQ			False		8332.0
 HeardOfMyPlate	CBQ596	Numeric			Heard of My Plate	DBQ	CBQ596	Heard of My Plate	Next I'm going to ask a few questions about the nutritional guidelines recommended for Americans by the federal government.  {Have you/Has SP} heard of My Plate?	" Both males and females 16 YEARS -
 
-			150 YEARS"	HeardOfMyPlate	DBQ			True	5811.0
+			150 YEARS"	HeardOfMyPlate	DBQ			True	YesNo	5811.0
 LookedUpMyPlateOnInternet	CBQ606	Numeric			Looked up My Plate on internet	DBQ	CBQ606	Looked up My Plate on internet	{Have you/Has SP} looked up the My Plate plan on the internet?	" Both males and females 16 YEARS -
 
-			150 YEARS"	LookedUpMyPlateOnInternet	DBQ			True	1295.0
+			150 YEARS"	LookedUpMyPlateOnInternet	DBQ			True	YesNo	1295.0
 TriedMyPlatePlan	CBQ611	Numeric			Tried My Plate plan	DBQ	CBQ611	Tried My Plate plan	{Have you/Has SP} tried to follow the recommendations in the My Plate plan?	" Both males and females 16 YEARS -
 
-			150 YEARS"	TriedMyPlatePlan	DBQ			True	1295.0
+			150 YEARS"	TriedMyPlatePlan	DBQ			True	YesNo	1295.0
 MainMealPlannerpreparer	DBQ930	Numeric			Main meal planner/preparer	DBQ	DBQ930	Main meal planner/preparer	{Are you/Is SP} the person who does most of the planning or preparing of meals in {your/SP's} family?	" Both males and females 16 YEARS -
 
-			150 YEARS"	MainMealPlannerpreparer	DBQ	"INTERVIEWER INSTRUCTION:  IF SP ANSWERS ""SOMETIMES"" OR ""50/50"", ENTER YES."		True	5827.0
+			150 YEARS"	MainMealPlannerpreparer	DBQ	"INTERVIEWER INSTRUCTION:  IF SP ANSWERS ""SOMETIMES"" OR ""50/50"", ENTER YES."		True	YesNo	5827.0
 SharedMealPlanningpreparingDuty	DBQ935	Numeric			Shared meal planning/preparing duty	DBQ	DBQ935	Shared meal planning/preparing duty	{Do you/Does SP} share in the planning or preparing of meals with someone else?	" Both males and females 16 YEARS -
 
-			150 YEARS"	SharedMealPlanningpreparingDuty	DBQ			True	5828.0
+			150 YEARS"	SharedMealPlanningpreparingDuty	DBQ			True	YesNo	5828.0
 MainFoodShopper	DBQ940	Numeric			Main food shopper	DBQ	DBQ940	Main food shopper	{Are you/Is SP} the person who does most of the shopping for food in {your/SP's} family?	" Both males and females 16 YEARS -
 
-			150 YEARS"	MainFoodShopper	DBQ	"INTERVIEWER INSTRUCTION:  IF SP ANSWERS ""SOMETIMES"" OR ""50/50"", ENTER YES."		True	5828.0
+			150 YEARS"	MainFoodShopper	DBQ	"INTERVIEWER INSTRUCTION:  IF SP ANSWERS ""SOMETIMES"" OR ""50/50"", ENTER YES."		True	YesNo	5828.0
 SharedFoodShoppingDuty	DBQ945	Numeric			Shared food shopping duty	DBQ	DBQ945	Shared food shopping duty	{Do you/Does SP} share in the shopping for food with someone else?	" Both males and females 16 YEARS -
 
-			150 YEARS"	SharedFoodShoppingDuty	DBQ			True	5828.0
+			150 YEARS"	SharedFoodShoppingDuty	DBQ			True	YesNo	5828.0
 HaveSeriousDifficultyHearing	DLQ010	Numeric			Have serious difficulty hearing?	DLQ	DLQ010	Have serious difficulty hearing?	With this next set of questions, we want to learn about people who have physical, mental, or emotional conditions that cause serious difficulties with their daily activities. Though different, these questions may sound similar to ones I asked earlier. {Are you/Is SP} deaf or {do you/does he/does she} have serious difficulty hearing?	" Both males and females 1 YEARS -
 
-			150 YEARS"	HaveSeriousDifficultyHearing	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY ""YOU"" AND ""DO YOU"". IF SP AGE <16, DISPLAY ""SP"" AND ""DOES HE/DOES SHE""."		True	8365.0
+			150 YEARS"	HaveSeriousDifficultyHearing	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY ""YOU"" AND ""DO YOU"". IF SP AGE <16, DISPLAY ""SP"" AND ""DOES HE/DOES SHE""."		True	YesNo	8365.0
 HaveSeriousDifficultySeeing	DLQ020	Numeric			Have serious difficulty seeing?	DLQ	DLQ020	Have serious difficulty seeing?	{Are you/Is SP} blind or {do you/does he/does she} have serious difficulty seeing even when wearing glasses?	" Both males and females 1 YEARS -
 
-			150 YEARS"	HaveSeriousDifficultySeeing	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY ""YOU"" AND ""DO YOU"". IF SP AGE <16, DISPLAY ""SP"" AND ""DOES HE/DOES SHE""."		True	8365.0
+			150 YEARS"	HaveSeriousDifficultySeeing	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY ""YOU"" AND ""DO YOU"". IF SP AGE <16, DISPLAY ""SP"" AND ""DOES HE/DOES SHE""."		True	YesNo	8365.0
 HaveSeriousDifficultyConcentrating	DLQ040	Numeric			Have serious difficulty concentrating?	DLQ	DLQ040	Have serious difficulty concentrating?	Because of a physical, mental, or emotional condition, {do you/does he/does she} have serious difficulty concentrating, remembering, or making decisions?	" Both males and females 5 YEARS -
 
-			150 YEARS"	HaveSeriousDifficultyConcentrating	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY  ""DO YOU"". IF SP AGE <16, DISPLAY ""DOES HE/DOES SHE""."		True	7595.0
+			150 YEARS"	HaveSeriousDifficultyConcentrating	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY  ""DO YOU"". IF SP AGE <16, DISPLAY ""DOES HE/DOES SHE""."		True	YesNo	7595.0
 HaveSeriousDifficultyWalking	DLQ050	Numeric			Have serious difficulty walking?	DLQ	DLQ050	Have serious difficulty walking?	{Do you/Does SP} have serious difficulty walking or climbing stairs?	" Both males and females 5 YEARS -
 
-			150 YEARS"	HaveSeriousDifficultyWalking	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY  ""DO YOU"". IF SP AGE <16, DISPLAY  ""DOES SP""."		True	7599.0
+			150 YEARS"	HaveSeriousDifficultyWalking	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY  ""DO YOU"". IF SP AGE <16, DISPLAY  ""DOES SP""."		True	YesNo	7599.0
 HaveDifficultyDressingOrBathing	DLQ060	Numeric			Have difficulty dressing or bathing?	DLQ	DLQ060	Have difficulty dressing or bathing?	{Do you/Does SP} have difficulty dressing or bathing?	" Both males and females 5 YEARS -
 
-			150 YEARS"	HaveDifficultyDressingOrBathing	DLQ			True	7602.0
+			150 YEARS"	HaveDifficultyDressingOrBathing	DLQ			True	YesNo	7602.0
 HaveDifficultyDoingErrandsAlone	DLQ080	Numeric			Have difficulty doing errands alone?	DLQ	DLQ080	Have difficulty doing errands alone?	Because of a physical, mental, or emotional condition, {do you/does he/does she} have difficulty doing errands alone such as visiting a doctor's office or shopping?	" Both males and females 15 YEARS -
 
-			150 YEARS"	HaveDifficultyDoingErrandsAlone	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY ""DO YOU"". IF SP AGE <16, DISPLAY  ""DOES HE/DOES SHE""."		True	5949.0
+			150 YEARS"	HaveDifficultyDoingErrandsAlone	DLQ	"CAPI INSTRUCTION: IF SP AGE >= 16, DISPLAY ""DO YOU"". IF SP AGE <16, DISPLAY  ""DOES HE/DOES SHE""."		True	YesNo	5949.0
 HowOftenDoYouFeelWorriedOrAnxious	DLQ100	Numeric			How often do you feel worried or anxious	DLQ	DLQ100	How often do you feel worried or anxious	How often do you feel worried, nervous or anxious? Would you say daily, weekly, monthly, a few times a year, or never?	" Both males and females 18 YEARS -
 
-			150 YEARS"	HowOftenDoYouFeelWorriedOrAnxious	DLQ			True	5441.0
+			150 YEARS"	HowOftenDoYouFeelWorriedOrAnxious	DLQ			True	HowOften	5441.0
 TakeMedicationForTheseFeelings	DLQ110	Numeric			Take medication for these feelings?	DLQ	DLQ110	Take medication for these feelings?	Do you take medication for these feelings?	" Both males and females 18 YEARS -
 
-			150 YEARS"	TakeMedicationForTheseFeelings	DLQ			True	5450.0
+			150 YEARS"	TakeMedicationForTheseFeelings	DLQ			True	YesNo	5450.0
 HowOftenDoYouFeelDepressed	DLQ140	Numeric			How often do you feel depressed?	DLQ	DLQ140	How often do you feel depressed?	How often do you feel depressed? Would you say daily, weekly, monthly, a few times a year, or never?	" Both males and females 18 YEARS -
 
-			150 YEARS"	HowOftenDoYouFeelDepressed	DLQ			True	5440.0
+			150 YEARS"	HowOftenDoYouFeelDepressed	DLQ			True	HowOften	5440.0
 TakeMedicationForDepression	DLQ150	Numeric			Take medication for depression?	DLQ	DLQ150	Take medication for depression?	Do you take medication for depression?	" Both males and females 18 YEARS -
 
-			150 YEARS"	TakeMedicationForDepression	DLQ	INTERVIEWER: MEDICATION FOR DEPRESSION IN THIS QUESTION INCLUDES ALL PRESCRIPTION AND NON-PRESCRIPTION DRUGS.		True	5451.0
+			150 YEARS"	TakeMedicationForDepression	DLQ	INTERVIEWER: MEDICATION FOR DEPRESSION IN THIS QUESTION INCLUDES ALL PRESCRIPTION AND NON-PRESCRIPTION DRUGS.		True	YesNo	5451.0
 CoveredByHealthInsurance	HIQ011	Numeric			Covered by health insurance	HIQ	HIQ011	Covered by health insurance	The (first/next) questions are about health insurance. {Are you/Is SP} covered by health insurance or some other kind of health care plan?  [Include health insurance obtained through employment or purchased directly as well as government programs like Medicare and Medicaid that provide medical care or help pay medical bills.]	" Both males and females 0 YEARS -
 
-			150 YEARS"	CoveredByHealthInsurance	HIQ			True	8346.0
+			150 YEARS"	CoveredByHealthInsurance	HIQ			True	YesNo	8346.0
 UsualSleepTimeOnWeekdaysOrWorkdays	SLQ300	Character			Usual sleep time on weekdays or workdays	SLQ	SLQ300	Usual sleep time on weekdays or workdays	"What time {do you/does SP} usually fall asleep on weekdays or 
 
-  workdays?"	" Both males and females 16 YEARS -			150 YEARS"	UsualSleepTimeOnWeekdaysOrWorkdays	SLQ	Character variable 'HH:MM' ('00:00' to '23:30')		False	5828.0
+  workdays?"	" Both males and females 16 YEARS -			150 YEARS"	UsualSleepTimeOnWeekdaysOrWorkdays	SLQ	Character variable 'HH:MM' ('00:00' to '23:30')		False		5828.0
 UsualWakeTimeOnWeekdaysOrWorkdays	SLQ310	Character			Usual wake time on weekdays or workdays	SLQ	SLQ310	Usual wake time on weekdays or workdays	"What time {do you/does SP} usually wake up on weekdays or 
 
-  workdays?"	" Both males and females 16 YEARS -			150 YEARS"	UsualWakeTimeOnWeekdaysOrWorkdays	SLQ	Character variable 'HH:MM' ('00:00' to '23:30')		False	5828.0
-SleepHoursWeekdaysOrWorkdays	SLD012	Numeric			Sleep hours - weekdays or workdays	SLQ	SLD012	Sleep hours - weekdays or workdays	Number of hours usually sleep on weekdays or workdays.	" Both males and females 16 YEARS -			150 YEARS"	SleepHoursWeekdaysOrWorkdays	SLQ	Derived from SLQ300 and SLQ310		False	5783.0
+  workdays?"	" Both males and females 16 YEARS -			150 YEARS"	UsualWakeTimeOnWeekdaysOrWorkdays	SLQ	Character variable 'HH:MM' ('00:00' to '23:30')		False		5828.0
+SleepHoursWeekdaysOrWorkdays	SLD012	Numeric			Sleep hours - weekdays or workdays	SLQ	SLD012	Sleep hours - weekdays or workdays	Number of hours usually sleep on weekdays or workdays.	" Both males and females 16 YEARS -			150 YEARS"	SleepHoursWeekdaysOrWorkdays	SLQ	Derived from SLQ300 and SLQ310		False		5783.0
 HowOftenDoYouSnore	SLQ030	Numeric			How often do you snore?	SLQ	SLQ030	How often do you snore?	"In the past 12 months, how often did {you/SP} snore while 
 
   {you were/s/he was} sleeping?"	" Both males and females 16 YEARS -			150 YEARS"	HowOftenDoYouSnore	SLQ	"INTERVIEWER INSTRUCTION: IF R SAYS ""DON""T KNOW"", PROBE IF 
 
-  ANYONE HAS TOLD THEM THEY SNORE."		True	5397.0
+  ANYONE HAS TOLD THEM THEY SNORE."		True	FloatZero	5397.0
 EverToldDoctorHadTroubleSleeping	SLQ050	Numeric			Ever told doctor had trouble sleeping?	SLQ	SLQ050	Ever told doctor had trouble sleeping?	"{Have you/Has SP} ever told a doctor or other health 
 
-  professional that {you have/s/he has} trouble sleeping?"	" Both males and females 16 YEARS -			150 YEARS"	EverToldDoctorHadTroubleSleeping	SLQ			True	5824.0
+  professional that {you have/s/he has} trouble sleeping?"	" Both males and females 16 YEARS -			150 YEARS"	EverToldDoctorHadTroubleSleeping	SLQ			True	YesNo	5824.0
 HowOftenFeelOverlySleepyDuringDay	SLQ120	Numeric			How often feel overly sleepy during day?	SLQ	SLQ120	How often feel overly sleepy during day?	"In the past month, how often did {you/SP} feel excessively or 
 
-  overly sleepy during the day?"	" Both males and females 16 YEARS -			150 YEARS"	HowOftenFeelOverlySleepyDuringDay	SLQ	HAND CARD SLQ1		True	5816.0
+  overly sleepy during the day?"	" Both males and females 16 YEARS -			150 YEARS"	HowOftenFeelOverlySleepyDuringDay	SLQ	HAND CARD SLQ1		True	FloatZero	5816.0
 HaveLittleInterestInDoingThings	DPQ010	Numeric			Have little interest in doing things	DPQ	DPQ010	Have little interest in doing things	Over the last 2 weeks, how often have you been bothered by the following problems: little interest or pleasure in doing things?  Would you say...	" Both males and females 18 YEARS -
 
-			150 YEARS"	HaveLittleInterestInDoingThings	DPQ	HAND CARD DPQ1		True	5086.0
+			150 YEARS"	HaveLittleInterestInDoingThings	DPQ	HAND CARD DPQ1		True	Depression	5086.0
 FeelingDownDepressedOrHopeless	DPQ020	Numeric			Feeling down, depressed, or hopeless	DPQ	DPQ020	Feeling down, depressed, or hopeless	[Over the last 2 weeks, how often have you been bothered by the following problems:] feeling down, depressed, or hopeless?	" Both males and females 18 YEARS -
 
-			150 YEARS"	FeelingDownDepressedOrHopeless	DPQ	HAND CARD DPQ1		True	5087.0
+			150 YEARS"	FeelingDownDepressedOrHopeless	DPQ	HAND CARD DPQ1		True	Depression	5087.0
 TroubleSleepingOrSleepingTooMuch	DPQ030	Numeric			Trouble sleeping or sleeping too much	DPQ	DPQ030	Trouble sleeping or sleeping too much	[Over the last 2 weeks, how often have you been bothered by the following problems:] trouble falling or staying asleep, or sleeping too much?	" Both males and females 18 YEARS -
 
-			150 YEARS"	TroubleSleepingOrSleepingTooMuch	DPQ	HAND CARD DPQ1		True	5086.0
+			150 YEARS"	TroubleSleepingOrSleepingTooMuch	DPQ	HAND CARD DPQ1		True	Depression	5086.0
 FeelingTiredOrHavingLittleEnergy	DPQ040	Numeric			Feeling tired or having little energy	DPQ	DPQ040	Feeling tired or having little energy	[Over the last 2 weeks, how often have you been bothered by the following problems:] feeling tired or having little energy?	" Both males and females 18 YEARS -
 
-			150 YEARS"	FeelingTiredOrHavingLittleEnergy	DPQ	HAND CARD DPQ1		True	5085.0
+			150 YEARS"	FeelingTiredOrHavingLittleEnergy	DPQ	HAND CARD DPQ1		True	Depression	5085.0
 PoorAppetiteOrOvereating	DPQ050	Numeric			Poor appetite or overeating	DPQ	DPQ050	Poor appetite or overeating	[Over the last 2 weeks, how often have you been bothered by the following problems:] poor appetite or overeating?	" Both males and females 18 YEARS -
 
-			150 YEARS"	PoorAppetiteOrOvereating	DPQ	HAND CARD DPQ1		True	5087.0
+			150 YEARS"	PoorAppetiteOrOvereating	DPQ	HAND CARD DPQ1		True	Depression	5087.0
 FeelingBadAboutYourself	DPQ060	Numeric			Feeling bad about yourself	DPQ	DPQ060	Feeling bad about yourself	[Over the last 2 weeks, how often have you been bothered by the following problems:] feeling bad about yourself - or that you are a failure or have let yourself or your family down?	" Both males and females 18 YEARS -
 
-			150 YEARS"	FeelingBadAboutYourself	DPQ	HAND CARD DPQ1		True	5083.0
+			150 YEARS"	FeelingBadAboutYourself	DPQ	HAND CARD DPQ1		True	Depression	5083.0
 TroubleConcentratingOnThings	DPQ070	Numeric			Trouble concentrating on things	DPQ	DPQ070	Trouble concentrating on things	[Over the last 2 weeks, how often have you been bothered by the following problems:] trouble concentrating on things, such as reading the newspaper or watching TV?	" Both males and females 18 YEARS -
 
-			150 YEARS"	TroubleConcentratingOnThings	DPQ	HAND CARD DPQ1		True	5086.0
+			150 YEARS"	TroubleConcentratingOnThings	DPQ	HAND CARD DPQ1		True	Depression	5086.0
 MovingOrSpeakingSlowlyOrTooFast	DPQ080	Numeric			Moving or speaking slowly or too fast	DPQ	DPQ080	Moving or speaking slowly or too fast	[Over the last 2 weeks, how often have you been bothered by the following problems:] moving or speaking so slowly that other people could have noticed?  Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?	" Both males and females 18 YEARS -
 
-			150 YEARS"	MovingOrSpeakingSlowlyOrTooFast	DPQ	HAND CARD DPQ1		True	5084.0
+			150 YEARS"	MovingOrSpeakingSlowlyOrTooFast	DPQ	HAND CARD DPQ1		True	Depression	5084.0
 ThoughtYouWouldBeBetterOffDead	DPQ090	Numeric			Thought you would be better off dead	DPQ	DPQ090	Thought you would be better off dead	[Over the last 2 weeks, how often have you been bothered by the following problems:] Thoughts that you would be better off dead or of hurting yourself in some way?	" Both males and females 18 YEARS -
 
-			150 YEARS"	ThoughtYouWouldBeBetterOffDead	DPQ	HAND CARD DPQ1		True	5085.0
+			150 YEARS"	ThoughtYouWouldBeBetterOffDead	DPQ	HAND CARD DPQ1		True	Depression	5085.0
 DifficultyTheseProblemsHaveCaused	DPQ100	Numeric			Difficulty these problems have caused	DPQ	DPQ100	Difficulty these problems have caused	How difficult have these problems made it for you to do your work, take care of things at home, or get along with people?	" Both males and females 18 YEARS -
 
-			150 YEARS"	DifficultyTheseProblemsHaveCaused	DPQ			True	3359.0
+			150 YEARS"	DifficultyTheseProblemsHaveCaused	DPQ			True	FloatZero	3359.0
 SmokedTobaccoLast5Days	SMQ681	Numeric			Smoked tobacco last 5 days?	SMQRTU	SMQ681	Smoked tobacco last 5 days?	The following questions ask about use of tobacco products in the past 5 days.  During the past 5 days, including today, did you smoke cigarettes, pipes, cigars, little cigars or cigarillos, water pipes, hookahs, or e-cigarettes?	" Both males and females 12 YEARS -
 
-			150 YEARS"	SmokedTobaccoLast5Days	SMQRTU			True	5953.0
+			150 YEARS"	SmokedTobaccoLast5Days	SMQRTU			True	YesNo	5953.0
 DaysSmokedCigarettesLast5Days	SMQ710	Numeric			# days smoked cigarettes last 5 days	SMQRTU	SMQ710	# days smoked cigarettes last 5 days	During the past 5 days, including today, on how many days did {you/he/she} smoke cigarettes?	" Both males and females 12 YEARS -
 
-			150 YEARS"	DaysSmokedCigarettesLast5Days	SMQRTU	ENTER NUMBER OF DAYS.	1 to 5	False	916.0
+			150 YEARS"	DaysSmokedCigarettesLast5Days	SMQRTU	ENTER NUMBER OF DAYS.	1 to 5	False		916.0
 CigarettesSmokedPerDay	SMQ720	Numeric			# cigarettes smoked per day	SMQRTU	SMQ720	# cigarettes smoked per day	During the past 5 days, including today, on the days {you/he/she} smoked, how many cigarettes did {you/he/she} smoke each day?	" Both males and females 12 YEARS -
 
-			150 YEARS"	CigarettesSmokedPerDay	SMQRTU	ENTER NUMBER OF CIGARETTES. IF 95 OR MORE CIGARETTES PER DAY, ENTER 95. 	1 to 95	False	916.0
+			150 YEARS"	CigarettesSmokedPerDay	SMQRTU	ENTER NUMBER OF CIGARETTES. IF 95 OR MORE CIGARETTES PER DAY, ENTER 95. 	1 to 95	False		916.0
 UsedAnyTobaccoProductLast5Days	SMDANY	Numeric			Used any tobacco product last 5 days?	SMQRTU	SMDANY	Used any tobacco product last 5 days?	Used any tobacco product last 5 days?	" Both males and females 12 YEARS -
 
-			150 YEARS"	UsedAnyTobaccoProductLast5Days	SMQRTU			True	5952.0
+			150 YEARS"	UsedAnyTobaccoProductLast5Days	SMQRTU			True	YesNo	5952.0
 ExperienceConfusionmemoryProblems	PFQ057	Numeric			Experience confusion/memory problems	PFQ	PFQ057	Experience confusion/memory problems	{Are you/Is SP} limited in any way because of difficulty remembering or because {you/s/he} experience{s} periods of confusion?	" Both males and females 20 YEARS -
 
-			150 YEARS"	ExperienceConfusionmemoryProblems	PFQ			True	5260.0
+			150 YEARS"	ExperienceConfusionmemoryProblems	PFQ			True	YesNo	5260.0
 PhysicalMentalEmotionalLimitations	PFQ059	Numeric			Physical, mental, emotional limitations	PFQ	PFQ059	Physical, mental, emotional limitations	{Are you/Is SP} limited in any way in any activity because of a physical, mental or emotional problem?	" Both males and females 20 YEARS -
 
-			150 YEARS"	PhysicalMentalEmotionalLimitations	PFQ			True	3643.0
+			150 YEARS"	PhysicalMentalEmotionalLimitations	PFQ			True	YesNo	3643.0
 DifficultyManagingMoney	PFQ061A	Numeric			Difficulty managing money	PFQ	PFQ061A	Difficulty managing money	"The next questions ask about difficulties {you/SP} may have doing certain activities because of a health problem.  By ""health problem"" we mean any long-term physical, mental or emotional problem or illness {not including pregnancy}.   By {yourself/himself /herself} and without using any special equipment, how much difficulty {do you/does SP} have . . .managing {your/his/her} money [such as keeping track of {your/his/her} expenses or paying bills]?"	" Both males and females 20 YEARS -
 
-			150 YEARS"	DifficultyManagingMoney	PFQ	HAND CARD PFQ1.  DO NOT INCLUDE TEMPORARY CONDITIONS LIKE PREGNANCY OR BROKEN LIMBS.  CAPI INSTRUCTION:  IF PFQ.054 = '1' (YES), DO NOT DISPLAY 'B' OR 'C'.  IF SP FEMALE, DISPLAY 'NOT INCLUDING PREGNANCY'.		True	2764.0
+			150 YEARS"	DifficultyManagingMoney	PFQ	HAND CARD PFQ1.  DO NOT INCLUDE TEMPORARY CONDITIONS LIKE PREGNANCY OR BROKEN LIMBS.  CAPI INSTRUCTION:  IF PFQ.054 = '1' (YES), DO NOT DISPLAY 'B' OR 'C'.  IF SP FEMALE, DISPLAY 'NOT INCLUDING PREGNANCY'.		True		2764.0
 60SecHr30SecHr2	BPXCHR	Numeric			60 sec HR (30 sec HR * 2)	BPX	BPXCHR	60 sec HR (30 sec HR * 2)	60 sec HR (30 sec HR * 2)	" Both males and females 0 YEARS -
 
-			7 YEARS"	60SecHr30SecHr2	BPX			False	1202.0
+			7 YEARS"	60SecHr30SecHr2	BPX			False		1202.0
 60SecPulse30SecPulse2	BPXPLS	Numeric			60 sec. pulse (30 sec. pulse * 2)	BPX	BPXPLS	60 sec. pulse (30 sec. pulse * 2)	60 sec. pulse (30 sec. pulse * 2)	" Both males and females 8 YEARS -
 
-			150 YEARS"	60SecPulse30SecPulse2	BPX			False	6742.0
+			150 YEARS"	60SecPulse30SecPulse2	BPX			False		6742.0
 SystolicBloodPres1StRdgMmHg	BPXSY1	Numeric			Systolic: Blood pres (1st rdg) mm Hg	BPX	BPXSY1	Systolic: Blood pres (1st rdg) mm Hg	Systolic:  Blood pressure (first reading) mm Hg	" Both males and females 8 YEARS -
 
-			150 YEARS"	SystolicBloodPres1StRdgMmHg	BPX			False	6302.0
+			150 YEARS"	SystolicBloodPres1StRdgMmHg	BPX			False		6302.0
 DiastolicBloodPres1StRdgMmHg	BPXDI1	Numeric			Diastolic: Blood pres (1st rdg) mm Hg	BPX	BPXDI1	Diastolic: Blood pres (1st rdg) mm Hg	Diastolic:  Blood pressure (first reading) mm Hg	" Both males and females 8 YEARS -
 
-			150 YEARS"	DiastolicBloodPres1StRdgMmHg	BPX			False	6302.0
+			150 YEARS"	DiastolicBloodPres1StRdgMmHg	BPX			False		6302.0
 SystolicBloodPres2NdRdgMmHg	BPXSY2	Numeric			Systolic: Blood pres (2nd rdg) mm Hg	BPX	BPXSY2	Systolic: Blood pres (2nd rdg) mm Hg	Systolic:  Blood pressure (second reading) mm Hg	" Both males and females 8 YEARS -
 
-			150 YEARS"	SystolicBloodPres2NdRdgMmHg	BPX			False	6563.0
+			150 YEARS"	SystolicBloodPres2NdRdgMmHg	BPX			False		6563.0
 DiastolicBloodPres2NdRdgMmHg	BPXDI2	Numeric			Diastolic: Blood pres (2nd rdg) mm Hg	BPX	BPXDI2	Diastolic: Blood pres (2nd rdg) mm Hg	Diastolic: Blood pressure (second reading) mm Hg	" Both males and females 8 YEARS -
 
-			150 YEARS"	DiastolicBloodPres2NdRdgMmHg	BPX			False	6563.0
+			150 YEARS"	DiastolicBloodPres2NdRdgMmHg	BPX			False		6563.0
 SystolicBloodPres3RdRdgMmHg	BPXSY3	Numeric			Systolic: Blood pres (3rd rdg) mm Hg	BPX	BPXSY3	Systolic: Blood pres (3rd rdg) mm Hg	Systolic:  Blood pressure (third reading) mm Hg	" Both males and females 8 YEARS -
 
-			150 YEARS"	SystolicBloodPres3RdRdgMmHg	BPX			False	6538.0
+			150 YEARS"	SystolicBloodPres3RdRdgMmHg	BPX			False		6538.0
 DiastolicBloodPres3RdRdgMmHg	BPXDI3	Numeric			Diastolic: Blood pres (3rd rdg) mm Hg	BPX	BPXDI3	Diastolic: Blood pres (3rd rdg) mm Hg	Diastolic: Blood pressure (third reading) mm Hg	" Both males and females 8 YEARS -
 
-			150 YEARS"	DiastolicBloodPres3RdRdgMmHg	BPX			False	6538.0
+			150 YEARS"	DiastolicBloodPres3RdRdgMmHg	BPX			False		6538.0
 EnergyKcal_DR2TOT	DR2TKCAL	Numeric			Energy (kcal)	DR2TOT	DR2TKCAL	Energy (kcal)	Energy (kcal)	" Both males and females 0 YEARS -
 
-			150 YEARS"	EnergyKcal	DR2TOT			False	6323.0
+			150 YEARS"	EnergyKcal	DR2TOT			False		6323.0
 ProteinGm_DR2TOT	DR2TPROT	Numeric			Protein (gm)	DR2TOT	DR2TPROT	Protein (gm)	Protein (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	ProteinGm	DR2TOT			False	6323.0
+			150 YEARS"	ProteinGm	DR2TOT			False		6323.0
 CarbohydrateGm_DR2TOT	DR2TCARB	Numeric			Carbohydrate (gm)	DR2TOT	DR2TCARB	Carbohydrate (gm)	Carbohydrate (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	CarbohydrateGm	DR2TOT			False	6323.0
+			150 YEARS"	CarbohydrateGm	DR2TOT			False		6323.0
 TotalSugarsGm_DR2TOT	DR2TSUGR	Numeric			Total sugars (gm)	DR2TOT	DR2TSUGR	Total sugars (gm)	Total sugars (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalSugarsGm	DR2TOT			False	6323.0
+			150 YEARS"	TotalSugarsGm	DR2TOT			False		6323.0
 DietaryFiberGm_DR2TOT	DR2TFIBE	Numeric			Dietary fiber (gm)	DR2TOT	DR2TFIBE	Dietary fiber (gm)	Dietary fiber (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	DietaryFiberGm	DR2TOT			False	6323.0
+			150 YEARS"	DietaryFiberGm	DR2TOT			False		6323.0
 TotalFatGm_DR2TOT	DR2TTFAT	Numeric			Total fat (gm)	DR2TOT	DR2TTFAT	Total fat (gm)	Total fat (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalFatGm	DR2TOT			False	6323.0
+			150 YEARS"	TotalFatGm	DR2TOT			False		6323.0
 TotalSaturatedFattyAcidsGm_DR2TOT	DR2TSFAT	Numeric			Total saturated fatty acids (gm)	DR2TOT	DR2TSFAT	Total saturated fatty acids (gm)	Total saturated fatty acids (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalSaturatedFattyAcidsGm	DR2TOT			False	6323.0
+			150 YEARS"	TotalSaturatedFattyAcidsGm	DR2TOT			False		6323.0
 TotalMonounsaturatedFattyAcidsGm_DR2TOT	DR2TMFAT	Numeric			Total monounsaturated fatty acids (gm)	DR2TOT	DR2TMFAT	Total monounsaturated fatty acids (gm)	Total monounsaturated fatty acids (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalMonounsaturatedFattyAcidsGm	DR2TOT			False	6323.0
+			150 YEARS"	TotalMonounsaturatedFattyAcidsGm	DR2TOT			False		6323.0
 TotalPolyunsaturatedFattyAcidsGm_DR2TOT	DR2TPFAT	Numeric			Total polyunsaturated fatty acids (gm)	DR2TOT	DR2TPFAT	Total polyunsaturated fatty acids (gm)	Total polyunsaturated fatty acids (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalPolyunsaturatedFattyAcidsGm	DR2TOT			False	6323.0
+			150 YEARS"	TotalPolyunsaturatedFattyAcidsGm	DR2TOT			False		6323.0
 CholesterolMg_DR2TOT	DR2TCHOL	Numeric			Cholesterol (mg)	DR2TOT	DR2TCHOL	Cholesterol (mg)	Cholesterol (mg)	" Both males and females 0 YEARS -
 
-			150 YEARS"	CholesterolMg	DR2TOT			False	6323.0
+			150 YEARS"	CholesterolMg	DR2TOT			False		6323.0
 AlcoholGm_DR2TOT	DR2TALCO	Numeric			Alcohol (gm)	DR2TOT	DR2TALCO	Alcohol (gm)	Alcohol (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	AlcoholGm	DR2TOT			False	6323.0
+			150 YEARS"	AlcoholGm	DR2TOT			False		6323.0
 WeightKg	BMXWT	Numeric			Weight (kg)	BMX	BMXWT	Weight (kg)	Weight (kg)	" Both males and females 0 YEARS -
 
-			150 YEARS"	WeightKg	BMX			False	8242.0
+			150 YEARS"	WeightKg	BMX			False		8242.0
 RecumbentLengthCm	BMXRECUM	Numeric			Recumbent Length (cm)	BMX	BMXRECUM	Recumbent Length (cm) 	Recumbent Length (cm)	" Both males and females 0 YEARS -
 
-			47 MONTHS"	RecumbentLengthCm	BMX			False	556.0
+			47 MONTHS"	RecumbentLengthCm	BMX			False		556.0
 StandingHeightCm	BMXHT	Numeric			Standing Height (cm)	BMX	BMXHT	Standing Height (cm)	Standing Height (cm)	" Both males and females 2 YEARS -
 
-			150 YEARS"	StandingHeightCm	BMX			False	8016.0
+			150 YEARS"	StandingHeightCm	BMX			False		8016.0
 BodyMassIndexKgm2	BMXBMI	Numeric			Body Mass Index (kg/m**2)	BMX	BMXBMI	Body Mass Index (kg/m**2)	Body Mass Index (kg/m**2)	" Both males and females 2 YEARS -
 
-			150 YEARS"	BodyMassIndexKgm2	BMX			False	8005.0
+			150 YEARS"	BodyMassIndexKgm2	BMX			False		8005.0
 WaistCircumferenceCm	BMXWAIST	Numeric			Waist Circumference (cm)	BMX	BMXWAIST	Waist Circumference (cm)	Waist Circumference (cm)	" Both males and females 2 YEARS -
 
-			150 YEARS"	WaistCircumferenceCm	BMX			False	7601.0
+			150 YEARS"	WaistCircumferenceCm	BMX			False		7601.0
 DirectHdlcholesterolMgdl	LBDHDD	Numeric			Direct HDL-Cholesterol (mg/dL)	HDL	LBDHDD	Direct HDL-Cholesterol (mg/dL)	Direct HDL-Cholesterol (mg/dL)	" Both males and females 6 YEARS -
 
-			150 YEARS"	DirectHdlcholesterolMgdl	HDL			False	6738.0
+			150 YEARS"	DirectHdlcholesterolMgdl	HDL			False		6738.0
 TotalCholesterolMgdl	LBXTC	Numeric			Total Cholesterol (mg/dL)	TCHOL	LBXTC	Total Cholesterol (mg/dL)	Total Cholesterol (mg/dL)	" Both males and females 6 YEARS -
 
-			150 YEARS"	TotalCholesterolMgdl	TCHOL			False	6738.0
+			150 YEARS"	TotalCholesterolMgdl	TCHOL			False		6738.0
 VigorousWorkActivity	PAQ605	Numeric			Vigorous work activity	PAQ	PAQ605	Vigorous work activity	Next I am going to ask you about the time {you spend/SP spends} doing different types of physical activity in a typical week. Think first about the time {you spend/he spends/she spends} doing work.  Think of work as the things that {you have/he has/she has} to do such as paid or unpaid work,  household chores, and yard work.  Does {your/SP's} work involve vigorous-intensity activity that causes large increases in breathing or heart rate like carrying or lifting heavy loads, digging or construction work for at least 10 minutes continuously?	" Both males and females 18 YEARS -
 
-			150 YEARS"	VigorousWorkActivity	PAQ			True	5527.0
+			150 YEARS"	VigorousWorkActivity	PAQ			True	YesNo	5527.0
 ModerateWorkActivity	PAQ620	Numeric			Moderate work activity	PAQ	PAQ620	Moderate work activity	Does {your/SP's} work involve moderate-intensity activity that causes small increases in breathing or heart rate such as brisk walking or carrying light loads for at least 10 minutes continuously?	" Both males and females 18 YEARS -
 
-			150 YEARS"	ModerateWorkActivity	PAQ			True	5528.0
+			150 YEARS"	ModerateWorkActivity	PAQ			True	YesNo	5528.0
 WalkOrBicycle	PAQ635	Numeric			Walk or bicycle	PAQ	PAQ635	Walk or bicycle	The next questions exclude the physical activity at work that you have already mentioned.  Now I would like to ask you about the usual way {you travel/SP travels} to and from places.  For example to school, for shopping, to work.  In a typical week  {do you/does SP} walk or use a bicycle for at least 10 minutes continuously to get to and from places?	" Both males and females 18 YEARS -
 
-			150 YEARS"	WalkOrBicycle	PAQ			True	5533.0
+			150 YEARS"	WalkOrBicycle	PAQ			True	YesNo	5533.0
 VigorousRecreationalActivities	PAQ650	Numeric			Vigorous recreational activities	PAQ	PAQ650	Vigorous recreational activities	The next questions exclude the work and transport activities that you have already mentioned.  Now I would like to ask you about sports, fitness and recreational activities.  In a typical week {do you/does SP} do any vigorous-intensity sports, fitness, or recreational activities that cause large increases in breathing or heart rate like running or basketball for at least 10 minutes continuously?	" Both males and females 18 YEARS -
 
-			150 YEARS"	VigorousRecreationalActivities	PAQ			True	5533.0
+			150 YEARS"	VigorousRecreationalActivities	PAQ			True	YesNo	5533.0
 ModerateRecreationalActivities	PAQ665	Numeric			Moderate recreational activities	PAQ	PAQ665	Moderate recreational activities	In a typical week {do you/does SP} do any moderate-intensity sports, fitness, or recreational activities that cause a small increase in breathing or heart rate such as brisk walking, bicycling, swimming, or volleyball for at least 10 minutes continuously?	" Both males and females 18 YEARS -
 
-			150 YEARS"	ModerateRecreationalActivities	PAQ			True	5533.0
+			150 YEARS"	ModerateRecreationalActivities	PAQ			True	YesNo	5533.0
 MinutesSedentaryActivity	PAD680	Numeric			Minutes sedentary activity	PAQ	PAD680	Minutes sedentary activity	The following question is about sitting at school, at home, getting to and from places, or with friends including time spent sitting at a desk, traveling in a car or bus, reading, playing cards, watching television, or using a computer. Do not include time spent sleeping. How much time {do you/does SP} usually spend sitting on a typical day?	" Both males and females 18 YEARS -
 
-			150 YEARS"	MinutesSedentaryActivity	PAQ	(SP interview version) SOFT EDIT: >17 HOURS. HARD EDIT: >24 HOURS. ENTER NUMBER OF MINUTES OR HOURS (MEC interview version) SOFT EDIT: 18 HOURS OR MORE AND LESS THAN 8 HOURS. ERROR MESSAGE: PLEASE VERIFY TIMES OF 18 HOURS OR MORE OR LESS THAN 8 HOURS. HARD EDIT: 24 HOURS OR MORE. ERROR MESSAGE: THE TIME SHOULD BE LESS THAN 24 HOURS. ENTER NUMBER (OF MINUTES OR HOURS)		False	5523.0
+			150 YEARS"	MinutesSedentaryActivity	PAQ	(SP interview version) SOFT EDIT: >17 HOURS. HARD EDIT: >24 HOURS. ENTER NUMBER OF MINUTES OR HOURS (MEC interview version) SOFT EDIT: 18 HOURS OR MORE AND LESS THAN 8 HOURS. ERROR MESSAGE: PLEASE VERIFY TIMES OF 18 HOURS OR MORE OR LESS THAN 8 HOURS. HARD EDIT: 24 HOURS OR MORE. ERROR MESSAGE: THE TIME SHOULD BE LESS THAN 24 HOURS. ENTER NUMBER (OF MINUTES OR HOURS)		False		5523.0
 EverBeenToldYouHaveAsthma	MCQ010	Numeric			Ever been told you have asthma	MCQ	MCQ010	Ever been told you have asthma	The following questions are about different medical conditions. Has a doctor or other health professional ever told {you/SP} that {you have/s/he/SP has} asthma (az-ma)?	" Both males and females 1 YEARS -
 
-			150 YEARS"	EverBeenToldYouHaveAsthma	MCQ	"CAPI INSTRUCTION:  IF SP AGE >= 16, DISPLAY ""YOU"" AND ""YOU HAVE"".  IF SP AGE = 12-15, DISPLAY ""SP"" AND ""S/HE HAS"". IF SP AGE < 12, DISPLAY ""YOU"" AND ""SP HAS""."		True	8359.0
+			150 YEARS"	EverBeenToldYouHaveAsthma	MCQ	"CAPI INSTRUCTION:  IF SP AGE >= 16, DISPLAY ""YOU"" AND ""YOU HAVE"".  IF SP AGE = 12-15, DISPLAY ""SP"" AND ""S/HE HAS"". IF SP AGE < 12, DISPLAY ""YOU"" AND ""SP HAS""."		True	YesNo	8359.0
 DoctorEverSaidYouHadArthritis	MCQ160A	Numeric			Doctor ever said you had arthritis	MCQ	MCQ160A	Doctor ever said you had arthritis	Has a doctor or other health professional ever told {you/SP} that {you/s/he} . . .had arthritis (ar-thry-tis)?	" Both males and females 20 YEARS -
 
-			150 YEARS"	DoctorEverSaidYouHadArthritis	MCQ	CAPI INSTRUCTION: TEXT OF QUESTION SHOULD BE OPTIONAL AFTER FIRST ITEM IS READ.		True	5250.0
+			150 YEARS"	DoctorEverSaidYouHadArthritis	MCQ	CAPI INSTRUCTION: TEXT OF QUESTION SHOULD BE OPTIONAL AFTER FIRST ITEM IS READ.		True	YesNo	5250.0
 EverToldYouHadHeartAttack	MCQ160E	Numeric			Ever told you had heart attack	MCQ	MCQ160E	Ever told you had heart attack	Has a doctor or other health professional ever told {you/SP}  that {you/s/he} . . .had a heart attack (also called myocardial infarction (my-o-car-dee-al in-fark-shun))?	" Both males and females 20 YEARS -
 
-			150 YEARS"	EverToldYouHadHeartAttack	MCQ			True	5255.0
+			150 YEARS"	EverToldYouHadHeartAttack	MCQ			True	YesNo	5255.0
 AgeWhenToldYouHadHeartAttack	MCD180E	Numeric			Age when told you had heart attack	MCQ	MCD180E	Age when told you had heart attack	How old {were you/was SP} when {you were/s/he was} first told {you/s/he} . . .had a heart attack (also called myocardial infarction)?	" Both males and females 20 YEARS -
 
-			150 YEARS"	AgeWhenToldYouHadHeartAttack	MCQ	ENTER AGE IN YEARS.  SKIP TO MCQ160f.		False	254.0
+			150 YEARS"	AgeWhenToldYouHadHeartAttack	MCQ	ENTER AGE IN YEARS.  SKIP TO MCQ160f.		False		254.0
 EverToldYouHadAStroke	MCQ160F	Numeric			Ever told you had a stroke	MCQ	MCQ160F	Ever told you had a stroke	Has a doctor or other health professional ever told {you/SP}  that {you/s/he} . . .had a stroke?	" Both males and females 20 YEARS -
 
-			150 YEARS"	EverToldYouHadAStroke	MCQ			True	5255.0
+			150 YEARS"	EverToldYouHadAStroke	MCQ			True	YesNo	5255.0
 AgeWhenToldYouHadAStroke	MCD180F	Numeric			Age when told you had a stroke	MCQ	MCD180F	Age when told you had a stroke	How old {were you/was SP} when {you were/s/he was} first told {you/s/he} . . .had a stroke?	" Both males and females 20 YEARS -
 
-			150 YEARS"	AgeWhenToldYouHadAStroke	MCQ	ENTER AGE IN YEARS.  SKIP TO MCQ160g.		False	255.0
+			150 YEARS"	AgeWhenToldYouHadAStroke	MCQ	ENTER AGE IN YEARS.  SKIP TO MCQ160g.		False		255.0
 EverToldYouHadCancerOrMalignancy	MCQ220	Numeric			Ever told you had cancer or malignancy	MCQ	MCQ220	Ever told you had cancer or malignancy	{Have you/Has SP} ever been told by a doctor or other health professional that {you/s/he} had cancer or a malignancy (ma-lig-nan-see) of any kind?	" Both males and females 20 YEARS -
 
-			150 YEARS"	EverToldYouHadCancerOrMalignancy	MCQ			True	5263.0
+			150 YEARS"	EverToldYouHadCancerOrMalignancy	MCQ			True	YesNo	5263.0
 1StCancerWhatKindWasIt	MCQ230A	Numeric			1st cancer - what kind was it?	MCQ	MCQ230A	1st cancer - what kind was it?	1st cancer - what kind was it?	" Both males and females 20 YEARS -
 
-			150 YEARS"	1StCancerWhatKindWasIt	MCQ			False	551.0
+			150 YEARS"	1StCancerWhatKindWasIt	MCQ			False		551.0
 Age1StCancerMcq230ADiagnosed	MCD240A	Numeric			Age 1st cancer (MCQ230a) diagnosed	MCQ	MCD240A	Age 1st cancer (MCQ230a) diagnosed	How old {were you/was SP} when {cancer in MCQ230a} was first diagnosed?	" Both males and females 20 YEARS -
 
-			150 YEARS"	Age1StCancerMcq230ADiagnosed	MCQ			False	550.0
+			150 YEARS"	Age1StCancerMcq230ADiagnosed	MCQ			False		550.0
 EverUsedMarijuanaOrHashish	DUQ200	Numeric			Ever used marijuana or hashish	DUQ	DUQ200	Ever used marijuana or hashish	The following questions ask about use of drugs not prescribed by a doctor. Please remember that your answers to these questions are strictly confidential. The first questions are about marijuana and hashish. Marijuana is also called pot or grass. Marijuana is usually smoked, either in cigarettes, called joints, or in a pipe. It is sometimes cooked in food. Hashish is a form of marijuana that is also called 'hash.' It is usually smoked in a pipe. Another form of hashish is hash oil. Have you ever, even once, used marijuana or hashish?	" Both males and females 18 YEARS -
 
-			59 YEARS"	EverUsedMarijuanaOrHashish	DUQ			True	3199.0
+			59 YEARS"	EverUsedMarijuanaOrHashish	DUQ			True	YesNo	3199.0
 DaysUsedMarijuanaOrHashishmonth	DUQ230	Numeric			# days used marijuana or hashish/month	DUQ	DUQ230	# days used marijuana or hashish/month	During the past 30 days, on how many days did you use marijuana or hashish?	" Both males and females 18 YEARS -
 
-			59 YEARS"	DaysUsedMarijuanaOrHashishmonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again."" ENTER A NUMBER"		False	627.0
+			59 YEARS"	DaysUsedMarijuanaOrHashishmonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again."" ENTER A NUMBER"		False		627.0
 EverUsedCocaineheroinmethamphetamine	DUQ240	Numeric			Ever used cocaine/heroin/methamphetamine	DUQ	DUQ240	Ever used cocaine/heroin/methamphetamine	Have you ever used cocaine, crack cocaine, heroin, or methamphetamine?	" Both males and females 18 YEARS -
 
-			69 YEARS"	EverUsedCocaineheroinmethamphetamine	DUQ			True	4144.0
+			69 YEARS"	EverUsedCocaineheroinmethamphetamine	DUQ			True	YesNo	4144.0
 EverUseAnyFormOfCocaine	DUQ250	Numeric			Ever use any form of cocaine	DUQ	DUQ250	Ever use any form of cocaine	The following questions are about cocaine, including all the different forms of cocaine such as powder, 'crack', 'free base', and coca paste.  Have you ever, even once, used cocaine, in any form?	" Both males and females 18 YEARS -
 
-			69 YEARS"	EverUseAnyFormOfCocaine	DUQ			True	669.0
+			69 YEARS"	EverUseAnyFormOfCocaine	DUQ			True	YesNo	669.0
 OfDaysUsedCocainemonth	DUQ280	Numeric			# of days used cocaine/month	DUQ	DUQ280	# of days used cocaine/month	During the past 30 days, on how many days did you use cocaine, in any form?	" Both males and females 18 YEARS -
 
-			59 YEARS"	OfDaysUsedCocainemonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again."" ENTER A NUMBER"		False	65.0
+			59 YEARS"	OfDaysUsedCocainemonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again."" ENTER A NUMBER"		False		65.0
 EverUsedHeroin	DUQ290	Numeric			Ever used heroin	DUQ	DUQ290	Ever used heroin	The following questions are about heroin.  Have you ever, even once, used heroin?	" Both males and females 18 YEARS -
 
-			69 YEARS"	EverUsedHeroin	DUQ			True	670.0
+			69 YEARS"	EverUsedHeroin	DUQ			True	YesNo	670.0
 OfDaysUsedHeroinmonth	DUQ320	Numeric			# of days used heroin/month	DUQ	DUQ320	# of days used heroin/month	During the past 30 days, on how many days did you use heroin?	" Both males and females 18 YEARS -
 
-			59 YEARS"	OfDaysUsedHeroinmonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again.""ENTER A NUMBER"		False	8.0
+			59 YEARS"	OfDaysUsedHeroinmonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again.""ENTER A NUMBER"		False		8.0
 EverUsedMethamphetamine	DUQ330	Numeric			Ever used methamphetamine	DUQ	DUQ330	Ever used methamphetamine	The following questions are about methamphetamine, also known as crank, crystal, ice or speed.  Have you ever, even once, used methamphetamine?	" Both males and females 18 YEARS -
 
-			69 YEARS"	EverUsedMethamphetamine	DUQ			True	670.0
+			69 YEARS"	EverUsedMethamphetamine	DUQ			True	YesNo	670.0
 DaysUsedMethamphetaminemonth	DUQ360	Numeric			# days used methamphetamine/month	DUQ	DUQ360	# days used methamphetamine/month	During the past 30 days, on how many days did you use methamphetamine?	" Both males and females 18 YEARS -
 
-			59 YEARS"	DaysUsedMethamphetaminemonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again."" ENTER A NUMBER"		False	34.0
+			59 YEARS"	DaysUsedMethamphetaminemonth	DUQ	"HARD EDIT VALUES:  1-30.  Error message:  ""Your response cannot exceed 30 days.  Please press the ""Back"" button, press ""Clear,"" and try again."" ENTER A NUMBER"		False		34.0
 EverBeenInRehabilitationProgram	DUQ430	Numeric			Ever been in rehabilitation program	DUQ	DUQ430	Ever been in rehabilitation program	Have you ever been in a drug treatment or drug rehabilitation program?	" Both males and females 18 YEARS -
 
-			59 YEARS"	EverBeenInRehabilitationProgram	DUQ			True	1765.0
+			59 YEARS"	EverBeenInRehabilitationProgram	DUQ			True	YesNo	1765.0
 BloodLeadUgdl	LBXBPB	Numeric			Blood lead (ug/dL)	PBCD	LBXBPB	Blood lead (ug/dL)	Blood lead (ug/dL)	" Both males and females 6 YEARS -
 
-			150 YEARS"	BloodLeadUgdl	PBCD			False	6884.0
+			150 YEARS"	BloodLeadUgdl	PBCD			False		6884.0
 BloodCadmiumUgl	LBXBCD	Numeric			Blood cadmium (ug/L)	PBCD	LBXBCD	Blood cadmium (ug/L)	Blood cadmium (ug/L)	" Both males and females 1 YEARS -
 
-			150 YEARS"	BloodCadmiumUgl	PBCD			False	7513.0
+			150 YEARS"	BloodCadmiumUgl	PBCD			False		7513.0
 BloodMercuryTotalUgl	LBXTHG	Numeric			Blood mercury, total (ug/L)	PBCD	LBXTHG	Blood mercury, total (ug/L) 	Blood mercury, total (ug/L) 	" Both males and females 1 YEARS -
 
-			150 YEARS"	BloodMercuryTotalUgl	PBCD			False	7513.0
+			150 YEARS"	BloodMercuryTotalUgl	PBCD			False		7513.0
 BloodSeleniumUgl	LBXBSE	Numeric			Blood selenium (ug/L)	PBCD	LBXBSE	Blood selenium (ug/L)	Blood selenium(ug/L)	" Both males and females 1 YEARS -
 
-			150 YEARS"	BloodSeleniumUgl	PBCD			False	7513.0
+			150 YEARS"	BloodSeleniumUgl	PBCD			False		7513.0
 BloodManganeseUgl	LBXBMN	Numeric			Blood manganese (ug/L)	PBCD	LBXBMN	Blood manganese (ug/L)	Blood manganese (ug/L)	" Both males and females 1 YEARS -
 
-			150 YEARS"	BloodManganeseUgl	PBCD			False	7513.0
+			150 YEARS"	BloodManganeseUgl	PBCD			False		7513.0
 Gender	RIAGENDR	Numeric			Gender	DEMO	RIAGENDR	Gender	Gender of the participant.	" Both males and females 0 YEARS -
 
-			150 YEARS"	Gender	DEMO			True	8366.0
+			150 YEARS"	Gender	DEMO			True		8366.0
 AgeInYearsAtScreening	RIDAGEYR	Numeric			Age in years at screening	DEMO	RIDAGEYR	Age in years at screening 	Age in years of the participant at the time of screening. Individuals 80 and over are topcoded at 80 years of age.	" Both males and females 0 YEARS -
 
-			150 YEARS"	AgeInYearsAtScreening	DEMO			False	8366.0
+			150 YEARS"	AgeInYearsAtScreening	DEMO			False		8366.0
 AgeInMonthsAtScreening0To24Mos	RIDAGEMN	Numeric			Age in months at screening - 0 to 24 mos	DEMO	RIDAGEMN	Age in months at screening - 0 to 24 mos	Age in months of the participant at the time of screening. Reported for persons aged 24 months or younger at the time of exam (or screening if not examined).	" Both males and females 0 YEARS -
 
-			2 YEARS"	AgeInMonthsAtScreening0To24Mos	DEMO			False	217.0
+			2 YEARS"	AgeInMonthsAtScreening0To24Mos	DEMO			False		217.0
 RacehispanicOrigin	RIDRETH1	Numeric			Race/Hispanic origin	DEMO	RIDRETH1	Race/Hispanic origin	Recode of reported race and Hispanic origin information	" Both males and females 0 YEARS -
 
-			150 YEARS"	RacehispanicOrigin	DEMO			True	8366.0
+			150 YEARS"	RacehispanicOrigin	DEMO			True		8366.0
 RacehispanicOriginWNhAsian	RIDRETH3	Numeric			Race/Hispanic origin w/ NH Asian	DEMO	RIDRETH3	Race/Hispanic origin w/ NH Asian	Recode of reported race and Hispanic origin information, with Non-Hispanic Asian Category	" Both males and females 0 YEARS -
 
-			150 YEARS"	RacehispanicOriginWNhAsian	DEMO			True	8366.0
+			150 YEARS"	RacehispanicOriginWNhAsian	DEMO			True		8366.0
 ServedActiveDutyInUsArmedForces	DMQMILIZ	Numeric			Served active duty in US Armed Forces	DEMO	DMQMILIZ	Served active duty in US Armed Forces	{Have you/Has SP} ever served on active duty in the U.S. Armed Forces, military Reserves, or National Guard? (Active duty does not include training for the Reserves or National Guard, but does include activation, for service in the U.S. or in a foreign country, in support of military or humanitarian operations.)	" Both males and females 17 YEARS -
 
-			150 YEARS"	ServedActiveDutyInUsArmedForces	DEMO			True	5675.0
+			150 YEARS"	ServedActiveDutyInUsArmedForces	DEMO			True	YesNo	5675.0
 EducationLevelChildrenyouth619	DMDEDUC3	Numeric			Education level - Children/Youth 6-19	DEMO	DMDEDUC3	Education level - Children/Youth 6-19	What is the highest grade or level of school {you have/SP has} completed or the highest degree {you have/s/he has} received?	" Both males and females 6 YEARS -
 
 			19 YEARS"	EducationLevelChildrenyouth619	DEMO	"HAND CARD DMQ1
 
 READ HAND CARD CATEGORIES IF NECESSARY
 
-ENTER HIGHEST LEVEL OF SCHOOL"		True	2167.0
+ENTER HIGHEST LEVEL OF SCHOOL"		True	FloatZero	2167.0
 EducationLevelAdults20	DMDEDUC2	Numeric			Education level - Adults 20+	DEMO	DMDEDUC2	Education level - Adults 20+	What is the highest grade or level of school {you have/SP has} completed or the highest degree {you have/s/he has} received?	" Both males and females 20 YEARS -
 
 			150 YEARS"	EducationLevelAdults20	DEMO	"HAND CARD DMQ1
 
 READ HAND CARD CATEGORIES IF NECESSARY
 
-ENTER HIGHEST LEVEL OF SCHOOL"		True	5263.0
+ENTER HIGHEST LEVEL OF SCHOOL"		True		5263.0
 MaritalStatus	DMDMARTL	Numeric			Marital status	DEMO	DMDMARTL	Marital status	Marital status	" Both males and females 20 YEARS -
 
-			150 YEARS"	MaritalStatus	DEMO			True	5260.0
+			150 YEARS"	MaritalStatus	DEMO			True		5260.0
 TotalNumberOfPeopleInTheHousehold	DMDHHSIZ	Numeric			Total number of people in the Household	DEMO	DMDHHSIZ	Total number of people in the Household	Total number of people in the Household	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalNumberOfPeopleInTheHousehold	DEMO			True	8366.0
+			150 YEARS"	TotalNumberOfPeopleInTheHousehold	DEMO			True		8366.0
 TotalNumberOfPeopleInTheFamily	DMDFMSIZ	Numeric			Total number of people in the Family	DEMO	DMDFMSIZ	Total number of people in the Family	Total number of people in the Family	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalNumberOfPeopleInTheFamily	DEMO			True	8366.0
+			150 YEARS"	TotalNumberOfPeopleInTheFamily	DEMO			True		8366.0
 OfChildren5YearsOrYoungerInHh	DMDHHSZA	Numeric			# of children 5 years or younger in HH	DEMO	DMDHHSZA	# of children 5 years or younger in HH	Number of children aged 5 years or younger in the household	" Both males and females 0 YEARS -
 
-			150 YEARS"	OfChildren5YearsOrYoungerInHh	DEMO			True	8366.0
+			150 YEARS"	OfChildren5YearsOrYoungerInHh	DEMO			True	FloatZero	8366.0
 OfChildren617YearsOldInHh	DMDHHSZB	Numeric			# of children 6-17 years old in HH	DEMO	DMDHHSZB	# of children 6-17 years old in HH	Number of children aged 6-17 years old in the household	" Both males and females 0 YEARS -
 
-			150 YEARS"	OfChildren617YearsOldInHh	DEMO			True	8366.0
+			150 YEARS"	OfChildren617YearsOldInHh	DEMO			True	FloatZero	8366.0
 OfAdults60YearsOrOlderInHh	DMDHHSZE	Numeric			# of adults 60 years or older in HH	DEMO	DMDHHSZE	# of adults 60 years or older in HH	Number of adults aged 60 years or older in the household	" Both males and females 0 YEARS -
 
-			150 YEARS"	OfAdults60YearsOrOlderInHh	DEMO			True	8366.0
+			150 YEARS"	OfAdults60YearsOrOlderInHh	DEMO			True	FloatZero	8366.0
 AnnualHouseholdIncome	INDHHIN2	Numeric			Annual household income	DEMO	INDHHIN2	Annual household income	Total household income (reported as a range value in dollars)	" Both males and females 0 YEARS -
 
-			150 YEARS"	AnnualHouseholdIncome	DEMO			True	7639.0
+			150 YEARS"	AnnualHouseholdIncome	DEMO			True	Income	7237.0
 AnnualFamilyIncome	INDFMIN2	Numeric			Annual family income	DEMO	INDFMIN2	Annual family income	Total family income (reported as a range value in dollars)	" Both males and females 0 YEARS -
 
-			150 YEARS"	AnnualFamilyIncome	DEMO			True	7658.0
+			150 YEARS"	AnnualFamilyIncome	DEMO			True	Income	7332.0
 RatioOfFamilyIncomeToPoverty	INDFMPIR	Numeric			Ratio of family income to poverty	DEMO	INDFMPIR	Ratio of family income to poverty	A ratio of family income to poverty guidelines.	" Both males and females 0 YEARS -
 
-			150 YEARS"	RatioOfFamilyIncomeToPoverty	DEMO			False	7332.0
+			150 YEARS"	RatioOfFamilyIncomeToPoverty	DEMO			False		7332.0
 TrunkFatG	DXXTRFAT	Numeric			Trunk Fat (g)	DXX	DXXTRFAT	Trunk Fat (g)	Trunk Fat (grams)	" Both males and females 8 YEARS -
 
-			59 YEARS"	TrunkFatG	DXX			False	3912.0
+			59 YEARS"	TrunkFatG	DXX			False		3912.0
 TrunkPercentFat	DXDTRPF	Numeric			Trunk Percent Fat	DXX	DXDTRPF	Trunk Percent Fat	Trunk Percent Fat	" Both males and females 8 YEARS -
 
-			59 YEARS"	TrunkPercentFat	DXX			False	3912.0
+			59 YEARS"	TrunkPercentFat	DXX			False		3912.0
 TotalPercentFat	DXDTOPF	Numeric			Total Percent Fat	DXX	DXDTOPF	Total Percent Fat	Total Percent Fat	" Both males and females 8 YEARS -
 
-			59 YEARS"	TotalPercentFat	DXX			False	3658.0
+			59 YEARS"	TotalPercentFat	DXX			False		3658.0
 HowOftenAddSaltToFoodAtTable	DBD100	Numeric			How often add salt to food at table	DR1TOT	DBD100	How often add salt to food at table	How often {do you/does SP} add this salt to {your/his/her/SP's} food at the table?  Would you say . . .	" Both males and females 0 YEARS -
 
-			150 YEARS"	HowOftenAddSaltToFoodAtTable	DR1TOT	"CAPI INSTRUCTION:  IF SP AGE <= 5, DISPLAY ""DO YOU"" FOR FIRST DISPLAY AND {SP'S} FOR SECOND DISPLAY."		True	4882.0
+			150 YEARS"	HowOftenAddSaltToFoodAtTable	DR1TOT	"CAPI INSTRUCTION:  IF SP AGE <= 5, DISPLAY ""DO YOU"" FOR FIRST DISPLAY AND {SP'S} FOR SECOND DISPLAY."		True		4882.0
 OnSpecialDiet	DRQSDIET	Numeric			On special diet?	DR1TOT	DRQSDIET	On special diet?	Are you currently on any kind of diet, either to lose weight or for some other health-related reason?	" Both males and females 0 YEARS -
 
-			150 YEARS"	OnSpecialDiet	DR1TOT			True	7346.0
+			150 YEARS"	OnSpecialDiet	DR1TOT			True	YesNo	7346.0
 WeightLosslowCalorieDiet	DRQSDT1	Numeric			Weight loss/Low calorie diet	DR1TOT	DRQSDT1	Weight loss/Low calorie diet	What kind of diet are you on? (Is it a weight loss or low calorie diet: low fat or cholesterol diet; low salt or sodium diet; sugar free or low sugar diet; low fiber diet; high fiber diet; diabetic diet; or another type of diet?)	" Both males and females 0 YEARS -
 
-			150 YEARS"	WeightLosslowCalorieDiet	DR1TOT			False	475.0
+			150 YEARS"	WeightLosslowCalorieDiet	DR1TOT			False		475.0
 LowFatlowCholesterolDiet	DRQSDT2	Numeric			Low fat/Low cholesterol diet	DR1TOT	DRQSDT2	Low fat/Low cholesterol diet	What kind of diet are you on? (Is it a weight loss or low calorie diet: low fat or cholesterol diet; low salt or sodium diet; sugar free or low sugar diet; low fiber diet; high fiber diet; diabetic diet; or another type of diet?)	" Both males and females 0 YEARS -
 
-			150 YEARS"	LowFatlowCholesterolDiet	DR1TOT			False	95.0
+			150 YEARS"	LowFatlowCholesterolDiet	DR1TOT			False		95.0
 LowSaltlowSodiumDiet	DRQSDT3	Numeric			Low salt/Low sodium diet	DR1TOT	DRQSDT3	Low salt/Low sodium diet	What kind of diet are you on? (Is it a weight loss or low calorie diet: low fat or cholesterol diet; low salt or sodium diet; sugar free or low sugar diet; low fiber diet; high fiber diet; diabetic diet; or another type of diet?)	" Both males and females 0 YEARS -
 
-			150 YEARS"	LowSaltlowSodiumDiet	DR1TOT			False	109.0
+			150 YEARS"	LowSaltlowSodiumDiet	DR1TOT			False		109.0
 DiabeticDiet	DRQSDT7	Numeric			Diabetic diet	DR1TOT	DRQSDT7	Diabetic diet	What kind of diet are you on? (Is it a weight loss or low calorie diet: low fat or cholesterol diet; low salt or sodium diet; sugar free or low sugar diet; low fiber diet; high fiber diet; diabetic diet; or another type of diet?)	" Both males and females 0 YEARS -
 
-			150 YEARS"	DiabeticDiet	DR1TOT			False	139.0
+			150 YEARS"	DiabeticDiet	DR1TOT			False		139.0
 LowCarbohydrateDiet	DRQSDT9	Numeric			Low carbohydrate diet	DR1TOT	DRQSDT9	Low carbohydrate diet	What kind of diet are you on? (Is it a weight loss or low calorie diet: low fat or cholesterol diet; low salt or sodium diet; sugar free or low sugar diet; low fiber diet; high fiber diet; diabetic diet; or another type of diet?)	" Both males and females 0 YEARS -
 
-			150 YEARS"	LowCarbohydrateDiet	DR1TOT			False	85.0
+			150 YEARS"	LowCarbohydrateDiet	DR1TOT			False		85.0
 EnergyKcal_DR1TOT	DR1TKCAL	Numeric			Energy (kcal)	DR1TOT	DR1TKCAL	Energy (kcal)	Energy (kcal)	" Both males and females 0 YEARS -
 
-			150 YEARS"	EnergyKcal	DR1TOT			False	7285.0
+			150 YEARS"	EnergyKcal	DR1TOT			False		7285.0
 ProteinGm_DR1TOT	DR1TPROT	Numeric			Protein (gm)	DR1TOT	DR1TPROT	Protein (gm)	Protein (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	ProteinGm	DR1TOT			False	7285.0
+			150 YEARS"	ProteinGm	DR1TOT			False		7285.0
 CarbohydrateGm_DR1TOT	DR1TCARB	Numeric			Carbohydrate (gm)	DR1TOT	DR1TCARB	Carbohydrate (gm)	Carbohydrate (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	CarbohydrateGm	DR1TOT			False	7285.0
+			150 YEARS"	CarbohydrateGm	DR1TOT			False		7285.0
 TotalSugarsGm_DR1TOT	DR1TSUGR	Numeric			Total sugars (gm)	DR1TOT	DR1TSUGR	Total sugars (gm)	Total sugars (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalSugarsGm	DR1TOT			False	7285.0
+			150 YEARS"	TotalSugarsGm	DR1TOT			False		7285.0
 DietaryFiberGm_DR1TOT	DR1TFIBE	Numeric			Dietary fiber (gm)	DR1TOT	DR1TFIBE	Dietary fiber (gm)	Dietary fiber (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	DietaryFiberGm	DR1TOT			False	7285.0
+			150 YEARS"	DietaryFiberGm	DR1TOT			False		7285.0
 TotalFatGm_DR1TOT	DR1TTFAT	Numeric			Total fat (gm)	DR1TOT	DR1TTFAT	Total fat (gm)	Total fat (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalFatGm	DR1TOT			False	7285.0
+			150 YEARS"	TotalFatGm	DR1TOT			False		7285.0
 TotalSaturatedFattyAcidsGm_DR1TOT	DR1TSFAT	Numeric			Total saturated fatty acids (gm)	DR1TOT	DR1TSFAT	Total saturated fatty acids (gm)	Total saturated fatty acids (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalSaturatedFattyAcidsGm	DR1TOT			False	7285.0
+			150 YEARS"	TotalSaturatedFattyAcidsGm	DR1TOT			False		7285.0
 TotalMonounsaturatedFattyAcidsGm_DR1TOT	DR1TMFAT	Numeric			Total monounsaturated fatty acids (gm)	DR1TOT	DR1TMFAT	Total monounsaturated fatty acids (gm)	Total monounsaturated fatty acids (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalMonounsaturatedFattyAcidsGm	DR1TOT			False	7285.0
+			150 YEARS"	TotalMonounsaturatedFattyAcidsGm	DR1TOT			False		7285.0
 TotalPolyunsaturatedFattyAcidsGm_DR1TOT	DR1TPFAT	Numeric			Total polyunsaturated fatty acids (gm)	DR1TOT	DR1TPFAT	Total polyunsaturated fatty acids (gm)	Total polyunsaturated fatty acids (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	TotalPolyunsaturatedFattyAcidsGm	DR1TOT			False	7285.0
+			150 YEARS"	TotalPolyunsaturatedFattyAcidsGm	DR1TOT			False		7285.0
 CholesterolMg_DR1TOT	DR1TCHOL	Numeric			Cholesterol (mg)	DR1TOT	DR1TCHOL	Cholesterol (mg)	Cholesterol (mg)	" Both males and females 0 YEARS -
 
-			150 YEARS"	CholesterolMg	DR1TOT			False	7285.0
+			150 YEARS"	CholesterolMg	DR1TOT			False		7285.0
 AlcoholGm_DR1TOT	DR1TALCO	Numeric			Alcohol (gm)	DR1TOT	DR1TALCO	Alcohol (gm)	Alcohol (gm)	" Both males and females 0 YEARS -
 
-			150 YEARS"	AlcoholGm	DR1TOT			False	7285.0
+			150 YEARS"	AlcoholGm	DR1TOT			False		7285.0
 TunaEatenDuringPast30Days	DRD370B	Numeric			Tuna eaten during past 30 days	DR1TOT	DRD370B	Tuna eaten during past 30 days	Tuna eaten during past 30 days	" Both males and females 1 YEARS -
 
-			150 YEARS"	TunaEatenDuringPast30Days	DR1TOT			True	4338.0
+			150 YEARS"	TunaEatenDuringPast30Days	DR1TOT			True	YesNo	4338.0
 DoctorToldYouHaveDiabetes	DIQ010	Numeric			Doctor told you have diabetes	DIQ	DIQ010	Doctor told you have diabetes	The next questions are about specific medical conditions. {Other than during pregnancy, {have you/has SP}/{Have you/Has SP}} ever been told by a doctor or health professional that {you have/{he/she/SP} has} diabetes or sugar diabetes?	" Both males and females 1 YEARS -
 
-			150 YEARS"	DoctorToldYouHaveDiabetes	DIQ	"CAPI INSTRUCTION:  IF SP AGE < 15, DISPLAY ""HAVE SP"" FOR THE FIRST DISPLAY AND ""SP HAS"" FOR THE SECOND DISPLAY.   IF SP IS FEMALE AND AGE >= 20, DISPLAY ""OTHER THAN DURING PREGNANCY, {HAVE YOU/HAS SP}""."		True	8362.0
+			150 YEARS"	DoctorToldYouHaveDiabetes	DIQ	"CAPI INSTRUCTION:  IF SP AGE < 15, DISPLAY ""HAVE SP"" FOR THE FIRST DISPLAY AND ""SP HAS"" FOR THE SECOND DISPLAY.   IF SP IS FEMALE AND AGE >= 20, DISPLAY ""OTHER THAN DURING PREGNANCY, {HAVE YOU/HAS SP}""."		True	YesNo	8362.0
 AgeWhenFirstToldYouHadDiabetes	DID040	Numeric			Age when first told you had diabetes	DIQ	DID040	Age when first told you had diabetes	How old {was SP/were you} when a doctor or other health professional first told {you/him/her} that {you/he/she} had diabetes or sugar diabetes?	" Both males and females 1 YEARS -
 
-			150 YEARS"	AgeWhenFirstToldYouHadDiabetes	DIQ	ENTER AGE IN YEARS.		False	852.0
+			150 YEARS"	AgeWhenFirstToldYouHadDiabetes	DIQ	ENTER AGE IN YEARS.		False		852.0
 EverToldYouHavePrediabetes	DIQ160	Numeric			Ever told you have prediabetes	DIQ	DIQ160	Ever told you have prediabetes	{Have you/Has SP} ever been told by a doctor or other health professional that {you have/SP has} any of the following:  prediabetes, impaired fasting glucose, impaired glucose tolerance, borderline diabetes or that {your/her/his} blood sugar is higher than normal but not high enough to be called diabetes or sugar diabetes?	" Both males and females 12 YEARS -
 
-			150 YEARS"	EverToldYouHavePrediabetes	DIQ	CAPI INSTRUCTION:  HELP SCREEN:  PREDIABETES, IMPAIRED FASTING GLUCOSE, IMPAIRED GLUCOSE TOLERANCE, OR BORDERLINE DIABETES OCCURS WHEN BLOOD SUGAR (GLUCOSE) LEVELS ARE HIGHER THAN NORMAL BUT NOT HIGH ENOUGH TO BE DIABETES.  HAND CARD DIQ1.		True	5373.0
+			150 YEARS"	EverToldYouHavePrediabetes	DIQ	CAPI INSTRUCTION:  HELP SCREEN:  PREDIABETES, IMPAIRED FASTING GLUCOSE, IMPAIRED GLUCOSE TOLERANCE, OR BORDERLINE DIABETES OCCURS WHEN BLOOD SUGAR (GLUCOSE) LEVELS ARE HIGHER THAN NORMAL BUT NOT HIGH ENOUGH TO BE DIABETES.  HAND CARD DIQ1.		True	YesNo	5373.0
 EverToldHaveHealthRiskForDiabetes	DIQ170	Numeric			Ever told have health risk for diabetes	DIQ	DIQ170	Ever told have health risk for diabetes	{Have you/Has SP} ever been told by a doctor or other health professional that {you have/s/he has} health conditions or a medical or family history that increases {your/his/her} risk for diabetes?	" Both males and females 12 YEARS -
 
-			150 YEARS"	EverToldHaveHealthRiskForDiabetes	DIQ			True	5537.0
+			150 YEARS"	EverToldHaveHealthRiskForDiabetes	DIQ			True	YesNo	5537.0
 FamilyHistory	DIQ175A	Numeric			Family history	DIQ	DIQ175A	Family history	"Why {Do you/Does SP} think {you are/he is/she is} at risk for diabetes or prediabetes?
 
 [Anything else?]"	" Both males and females 12 YEARS -
 
-			150 YEARS"	FamilyHistory	DIQ	"INTERVIEWER INSTRUCTION:  DO NOT READ. CODE ALL THAT APPLY.  CAPI INSTRUCTION: IF RESPONDENT ANSWERS ""OTHER"", ALLOW ENTRY OF RESPONSE UP TO 250 CHARACTERS. HAND CARD DIQ2"		True	1106.0
+			150 YEARS"	FamilyHistory	DIQ	"INTERVIEWER INSTRUCTION:  DO NOT READ. CODE ALL THAT APPLY.  CAPI INSTRUCTION: IF RESPONDENT ANSWERS ""OTHER"", ALLOW ENTRY OF RESPONSE UP TO 250 CHARACTERS. HAND CARD DIQ2"		True		1106.0
 TakingInsulinNow	DIQ050	Numeric			Taking insulin now	DIQ	DIQ050	Taking insulin now	{Is SP/Are you} now taking insulin	" Both males and females 1 YEARS -
 
-			150 YEARS"	TakingInsulinNow	DIQ			True	8365.0
+			150 YEARS"	TakingInsulinNow	DIQ			True	YesNo	8365.0
 TakeDiabeticPillsToLowerBloodSugar	DIQ070	Numeric			Take diabetic pills to lower blood sugar	DIQ	DIQ070	Take diabetic pills to lower blood sugar	{Is SP/Are you} now taking diabetic pills to lower {{his/her}/your} blood sugar?  These are sometimes called oral agents or oral hypoglycemic agents.	" Both males and females 1 YEARS -
 
-			150 YEARS"	TakeDiabeticPillsToLowerBloodSugar	DIQ			True	1603.0
+			150 YEARS"	TakeDiabeticPillsToLowerBloodSugar	DIQ			True	YesNo	1603.0
 WhatWasYourLastA1CLevel	DIQ280	Numeric			What was your last A1C level	DIQ	DIQ280	What was your last A1C level	"What was {your/SP's} last ""A one C"" level?"	" Both males and females 1 YEARS -
 
-			150 YEARS"	WhatWasYourLastA1CLevel	DIQ	CAPI INSTRUCTION:  SOFT EDIT FOR ANY NUMBER LESS THAN 5 OR MORE THAN 14.  ENTER VALUE		False	712.0
+			150 YEARS"	WhatWasYourLastA1CLevel	DIQ	CAPI INSTRUCTION:  SOFT EDIT FOR ANY NUMBER LESS THAN 5 OR MORE THAN 14.  ENTER VALUE		False		712.0
 Glycohemoglobin	LBXGH	Numeric			Glycohemoglobin (%)	GHB	LBXGH	Glycohemoglobin (%)	Glycohemoglobin (%)	" Both males and females 12 YEARS -
 
-			150 YEARS"	Glycohemoglobin	GHB			False	6045.0
+			150 YEARS"	Glycohemoglobin	GHB			False		6045.0
 SmokedAtLeast100CigarettesInLife	SMQ020	Numeric			Smoked at least 100 cigarettes in life	SMQ	SMQ020	Smoked at least 100 cigarettes in life	These next questions are about cigarette smoking and other tobacco use. {Have you/Has SP} smoked at least 100 cigarettes in {your/his/her} entire life?	" Both males and females 18 YEARS -
 
-			150 YEARS"	SmokedAtLeast100CigarettesInLife	SMQ			True	5533.0
+			150 YEARS"	SmokedAtLeast100CigarettesInLife	SMQ			True	YesNo	5533.0
 AgeStartedSmokingCigarettesRegularly	SMD030	Numeric			Age started smoking cigarettes regularly	SMQ	SMD030	Age started smoking cigarettes regularly	How old {were you/was SP} when {you/s/he} first started to smoke cigarettes fairly regularly?	" Both males and females 18 YEARS -
 
-			150 YEARS"	AgeStartedSmokingCigarettesRegularly	SMQ	ENTER AGE IN YEARS		False	2232.0
+			150 YEARS"	AgeStartedSmokingCigarettesRegularly	SMQ	ENTER AGE IN YEARS		False		2232.0
 DoYouNowSmokeCigarettes	SMQ040	Numeric			Do you now smoke cigarettes?	SMQ	SMQ040	Do you now smoke cigarettes?	{Do you/Does SP} now smoke cigarettes?	" Both males and females 18 YEARS -
 
-			150 YEARS"	DoYouNowSmokeCigarettes	SMQ			True	2232.0
+			150 YEARS"	DoYouNowSmokeCigarettes	SMQ			True		2232.0
 DaysSmokedCigsDuringPast30Days	SMD641	Numeric			# days smoked cigs during past 30 days	SMQ	SMD641	# days smoked cigs during past 30 days	On how many of the past 30 days did {you/SP} smoke a cigarette?	" Both males and females 12 YEARS -
 
-			150 YEARS"	DaysSmokedCigsDuringPast30Days	SMQ	ENTER NUMBER (OF DAYS)	0 to 30	False	1014.0
+			150 YEARS"	DaysSmokedCigsDuringPast30Days	SMQ	ENTER NUMBER (OF DAYS)	0 to 30	False		1014.0
 AvgCigarettesdayDuringPast30Days	SMD650	Numeric			Avg # cigarettes/day during past 30 days	SMQ	SMD650	Avg # cigarettes/day during past 30 days	During the past 30 days, on the days that {you/SP} smoked, about how many cigarettes did {you/s/he} smoke per day?	" Both males and females 12 YEARS -
 
-			150 YEARS"	AvgCigarettesdayDuringPast30Days	SMQ	1 PACK EQUALS 20 CIGARETTES.  IF LESS THAN 1 PER DAY, ENTER 1.  IF 95 OR MORE PER DAY, ENTER 95.  ENTER NUMBER (OF CIGARETTES) (PER DAY).	1 to 95	False	974.0
+			150 YEARS"	AvgCigarettesdayDuringPast30Days	SMQ	1 PACK EQUALS 20 CIGARETTES.  IF LESS THAN 1 PER DAY, ENTER 1.  IF 95 OR MORE PER DAY, ENTER 95.  ENTER NUMBER (OF CIGARETTES) (PER DAY).	1 to 95	False		974.0
 TriedToQuitSmoking	SMQ670	Numeric			Tried to quit smoking	SMQ	SMQ670	Tried to quit smoking	During the past 12 months, have you stopped smoking for one day or longer because you were trying to quit smoking?	" Both males and females 12 YEARS -
 
-			150 YEARS"	TriedToQuitSmoking	SMQ	VERBAL INSTRUCTIONS TO SP:  Please select Yes, No.		True	986.0
+			150 YEARS"	TriedToQuitSmoking	SMQ	VERBAL INSTRUCTIONS TO SP:  Please select Yes, No.		True	YesNo	986.0
 TimesStoppedSmokingCigarettes	SMQ848	Numeric			# times stopped smoking cigarettes	SMQ	SMQ848	# times stopped smoking cigarettes	During the past 12 months, how many times {have you/has SP} stopped smoking cigarettes because {you were/he was/she was} trying to quit smoking?	" Both males and females 18 YEARS -
 
 			150 YEARS"	TimesStoppedSmokingCigarettes	SMQ	"ENTER NUMBER OF TIMES (1-20 TIMES)
 
-CAPI INSTRUCTION: IF MORE THAN 20 TIMES ENTER 20"		False	504.0
+CAPI INSTRUCTION: IF MORE THAN 20 TIMES ENTER 20"		False		504.0
 HowLongWereYouAbleToStopSmoking	SMQ852Q	Numeric			How long were you able to stop smoking	SMQ	SMQ852Q	How long were you able to stop smoking	The last time {you/SP} tried to quit, how long {were you/was he/was she} able to stop smoking?	" Both males and females 18 YEARS -
 
-			150 YEARS"	HowLongWereYouAbleToStopSmoking	SMQ	CAPI INSTRUCTION: SOFT EDIT: SMQ852 CANNOT BE GREATER THAN 364 DAYS, 11 MONTHS OR 51 WEEKS. ENTER NUMBER (OF DAYS, WEEKS OR MONTHS). ENTER 0 FOR LESS THAN 24 HOUR PERIOD.		False	498.0
+			150 YEARS"	HowLongWereYouAbleToStopSmoking	SMQ	CAPI INSTRUCTION: SOFT EDIT: SMQ852 CANNOT BE GREATER THAN 364 DAYS, 11 MONTHS OR 51 WEEKS. ENTER NUMBER (OF DAYS, WEEKS OR MONTHS). ENTER 0 FOR LESS THAN 24 HOUR PERIOD.		False		498.0
 UnitOfMeasureDayweekmonthyear_2_SMQ	SMQ852U	Numeric			Unit of measure (day/week/month/year)	SMQ	SMQ852U	Unit of measure (day/week/month/year)	The last time {you/SP} tried to quit, how long {were you/was he/was she} able to stop smoking?	" Both males and females 18 YEARS -
 
-			150 YEARS"	UnitOfMeasureDayweekmonthyear	SMQ	ENTER UNIT		True	496.0
+			150 YEARS"	UnitOfMeasureDayweekmonthyear	SMQ	ENTER UNIT		True		496.0
 CurrentSelfreportedHeightInches	WHD010	Numeric			Current self-reported height (inches)	WHQ	WHD010	Current self-reported height (inches)	These next questions ask about {your/SP's} height and weight at different times in {your/his/her} life.  How tall {are you/is SP} without shoes?	" Both males and females 16 YEARS -
 
-			150 YEARS"	CurrentSelfreportedHeightInches	WHQ	ENTER HEIGHT IN FEET AND INCHES OR METERS AND CENTIMETERS.		False	5776.0
+			150 YEARS"	CurrentSelfreportedHeightInches	WHQ	ENTER HEIGHT IN FEET AND INCHES OR METERS AND CENTIMETERS.		False		5776.0
 CurrentSelfreportedWeightPounds	WHD020	Numeric			Current self-reported weight (pounds)	WHQ	WHD020	Current self-reported weight (pounds)	"How much {do you/does SP} weigh without clothes or shoes?
 
 "	" Both males and females 16 YEARS -
 
 			150 YEARS"	CurrentSelfreportedWeightPounds	WHQ	"RECORD CURRENT WEIGHT. IF PREGNANT, ASK FOR WEIGHT BEFORE PREGNANCY. ENTER WEIGHT IN POUNDS OR KILOGRAMS. 
 
-"		False	5828.0
+"		False		5828.0
 TriedToLoseWeightInPastYear	WHQ070	Numeric			Tried to lose weight in past year	WHQ	WHQ070	Tried to lose weight in past year	During the past 12 months, {have you/has SP} tried to lose weight?	" Both males and females 16 YEARS -
 
-			150 YEARS"	TriedToLoseWeightInPastYear	WHQ			True	5087.0
+			150 YEARS"	TriedToLoseWeightInPastYear	WHQ			True	YesNo	5087.0
 TimesLost10LbsOrMoreToLoseWeight	WHQ225	Numeric			Times lost 10 lbs or more to lose weight	WHQ	WHQ225	Times lost 10 lbs or more to lose weight	How many times {have you/has SP} lost 10 pounds or more because {you were/he was/she was} trying to lose weight?  Was it . . .	" Both males and females 16 YEARS -
 
-			150 YEARS"	TimesLost10LbsOrMoreToLoseWeight	WHQ			True	5794.0
+			150 YEARS"	TimesLost10LbsOrMoreToLoseWeight	WHQ			True		5794.0
