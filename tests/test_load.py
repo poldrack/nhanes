@@ -10,7 +10,7 @@ def test_load_data():
 def test_load_metadata():
     df = load_NHANES_metadata(year='2017-2018')
     assert df.shape[0] == 197
-    assert df.shape[1] == 16
+    assert df.shape[1] == 17
 
 
 def test_match():
