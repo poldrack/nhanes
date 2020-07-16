@@ -24,7 +24,8 @@ def load_NHANES_data(year='2017-2018', datafile=None):
     if datafile is None:
         datafile = pkg_resources.resource_filename(
             'nhanes', 'combined_data/%s/NHANES_data_%s.tsv' % (year, year))
-    return(pd.read_csv(datafile, sep='\t', index_col=0))
+    return(pd.read_csv(datafile, sep='\t',
+                       index_col=0, low_memory=False))
 
 
 def load_NHANES_metadata(year='2017-2018', datafile=None):
@@ -43,7 +44,8 @@ def load_NHANES_metadata(year='2017-2018', datafile=None):
     if datafile is None:
         datafile = pkg_resources.resource_filename(
             'nhanes', 'combined_data/%s/NHANES_metadata_%s.tsv' % (year, year))
-    return(pd.read_csv(datafile, sep='\t', index_col=0))
+    return(pd.read_csv(datafile, sep='\t',
+                       index_col=0, low_memory=False))
 
 
 def open_dataset_page(dataset, year='2017-2018'):
