@@ -27,7 +27,7 @@ def download_raw_datafiles(datasets=None,
                            datasets_file=None,
                            basedir='./',
                            year='2017-2018',
-                           baseurl='https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018'):
+                           baseurl='https://wwwn.cdc.gov/Nchs/Nhanes'):
 
     year_codes = get_nhanes_year_code_dict()
     assert year in year_codes
@@ -45,7 +45,7 @@ def download_raw_datafiles(datasets=None,
         datasets = get_datasets(datasets_file)
 
     for dataset in datasets:
-        dataset_url = '/'.join([baseurl, '%s_%s.XPT' % (dataset, year_codes[year])])
+        dataset_url = '/'.join([baseurl, '%s/%s_%s.XPT' % (year, dataset, year_codes[year])])
         print('downloading', dataset_url)
         # random delay to prevent web server from getting upset with us
         sleep(np.random.rand())
@@ -261,7 +261,7 @@ def deduplicate_long_variable_names_across_sets(variable_df):
 
 def parse_html_variable_info_section(info):
     infodict = {
-        i[0].text.strip(': ').replace(' ', ''): i[1].text
+        i[0].text.strip(': ').replace(' ', ''): i[1].text.strip()
         for i in zip(info.find_all('dt'), info.find_all('dd'))
     }
 
